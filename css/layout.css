@@ -1,0 +1,152 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.navbar .navbar-nav {
+            margin: 0 auto;
+        }
+
+.navbar .nav-item a {
+            color: #FFF;
+        }
+
+.navbar .dropdown-menu {
+            background-color: rgba(213, 61, 37, 1);
+            top: 97%;
+        }
+
+.nav > li.dropdown.show {
+          position: static;
+        }
+
+.nav > li.dropdown.show .dropdown-menu {
+         /* display: flex;*/
+        /*  flex-wrap: wrap;*/
+          border-radius: 0px;
+          width: 72vw !important;
+          /*text-align: center;*/
+          left: 0;
+          right: 0;
+        }
+
+.dropdown-menu > a {
+          height: 50px;
+          line-height: 50px;
+          vertical-align: middle;
+          display: inline;
+        }
+
+.navbar-nav .nav-link {
+            padding-right: 0;
+            padding-left: 1.8rem;
+        }
+
+.dropdown-item {
+            padding-left: 1.8rem;            
+        }
+
+.dropdown-item:hover {
+            background-color: rgba(0,0,0,0.15);   
+        }
+
+.slidescss{
+  background-size:1920px 1080px;
+  width:100%;
+  height:650px;
+}
+.carousel-item {
+    -webkit-background-attachment: fixed!important;
+    -moz-background-attachment: fixed!important;
+    background-attachment: fixed!important;
+    background-position: center top!important;
+}
+.carousel-fade .active.carousel-item-left, 
+.carousel-fade .active.carousel-item-prev, 
+.carousel-fade .carousel-item-next, 
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active{
+  -webkit-transform: none;
+ transform: none;
+}
+
+div a { text-decoration: none; color:black; }
+div a:visited { text-decoration: none; }
+div a:hover { text-decoration: none;color:red }
+div a:focus { text-decoration: none; }
+div a:hover, a:active { text-decoration: none; }
+.form-control:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 5px rgba(255,0,0,0.3) !important;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=number], input[type=date], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    outline-color: red;
+}
+
+/* Set a style for login buttons */
+.loginbtn {
+    background-color: #be2a2b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.confirmbtn{
+    background-color: #be2a2b;color: white;border: none;padding: 7px 15px;margin: 20px 0;
+}
+
+.checkoutbtn{
+    background-color: green;color: white;border: none;padding: 7px 105px;margin: 20px 0;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the logout button */
+.logoutbtn {
+    width: auto;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #be2a2b;
+}
+
+#header
+{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index:1000;
+}
+
+
+.pagination li.active a {
+    border: none;
+    background-color: red !important;
+}
+
+
+.pagination li a {
+    color: black;
+    text-decoration: none;
+}
+
+.pagination li a:hover {
+    color: black;
+}
