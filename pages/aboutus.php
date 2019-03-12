@@ -18,4 +18,4 @@
         Để hoàn thiện dự án của mình, chúng tôi – những người thực hiện, luôn mong muốn sự trải nghiệm và góp ý của các bạn!<br>
         Và bây giờ… Xin mời trải nghiệm Libros Bookstore!!!<br>
     </p>
-</div>
+</div> 

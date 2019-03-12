@@ -13,27 +13,24 @@
         </div>
         <br>
         <?php
-        if (isset($_POST["btnLogin"]) && mysqli_num_rows($user) == 0)
-        {
-            $check_usernames = check_username($un);
-            $check_passwords = check_password($pa);
-            ?>
-            <div class="container" style="background-color:red;padding: 14px 20px;text-align: center;color:white">
-              <?php
-                if (mysqli_num_rows($check_usernames) == 0)
-                {
-                  echo "Username không tồn tại. Xin vui lòng thử lại !";
-                }
-                else if (mysqli_num_rows($check_usernames) == 1 && mysqli_num_rows($check_passwords) == 0)
-                {
+        if (isset($_POST["btnLogin"]) && mysqli_num_rows($user) == 0) {
+                $check_usernames = check_username($un);
+                $check_passwords = check_password($pa);
+                ?>
+        <div class="container" style="background-color:red;padding: 14px 20px;text-align: center;color:white">
+            <?php
+            if (mysqli_num_rows($check_usernames) == 0) {
+                    echo "Username không tồn tại. Xin vui lòng thử lại !";
+                } else if (mysqli_num_rows($check_usernames) == 1 && mysqli_num_rows($check_passwords) == 0) {
                     echo "Password không chính xác. Xin vui lòng thử lại !";
                 }
 
-                ?>
-            </div>
-            <br>
-            <?php
-        }   ?>
+            ?>
+        </div>
+        <br>
+        <?php
+
+    }   ?>
 
         <label for="uname"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" required>
@@ -50,4 +47,4 @@
 <br>
 <div class="container">
     Don't have account yet? <a href="index.php?p=signup"><b style="color:red">&nbspSign up</b></a>
-</div>
+</div> 

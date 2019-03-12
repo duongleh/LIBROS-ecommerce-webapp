@@ -20,85 +20,85 @@ else $page = 1;
 <!-- signup -->
 <?php
 if (isset($_POST["btnSignup"])) {
-        $Hoten = $_POST["Hoten"];
-        $Diachi = $_POST["Diachi"];
-        $sdt = $_POST["sdt"];
-        $date = date_create_from_format('Y-m-d', $_POST["Ngaysinh"]);
-        $Ngaysinh = date_format($date, 'Ymd');
-        $email = $_POST["email"];
-        $Gioitinh = $_POST["Gioitinh"];
-        $today = date("Ymd");
-        $un = $_POST["uname"];
-        $pa = $_POST["psw"];
-        $pa = md5($pa);
-        $gr = 0;
-        $qr = "
+    $Hoten = $_POST["Hoten"];
+    $Diachi = $_POST["Diachi"];
+    $sdt = $_POST["sdt"];
+    $date = date_create_from_format('Y-m-d', $_POST["Ngaysinh"]);
+    $Ngaysinh = date_format($date, 'Ymd');
+    $email = $_POST["email"];
+    $Gioitinh = $_POST["Gioitinh"];
+    $today = date("Ymd");
+    $un = $_POST["uname"];
+    $pa = $_POST["psw"];
+    $pa = md5($pa);
+    $gr = 0;
+    $qr = "
         INSERT INTO users(Hoten,Diachi,SDT,Ngaysinh,Email,Gioitinh,Ngaydangky,Username,Passwords,Groups) 
         VALUES ('$Hoten','$Diachi',$sdt,$Ngaysinh,'$email','$Gioitinh',$today,'$un','$pa',$gr);
     ";
-        $con = myConnect();
-        $register = mysqli_query($con, $qr);
-    }
+    $con = myConnect();
+    $register = mysqli_query($con, $qr);
+}
 ?>
 
 <!-- login -->
 <?php
 if (isset($_POST["btnLogin"])) {
-        $un = $_POST["uname"];
-        $pa = $_POST["psw"];
-        $pa = md5($pa);
+    $un = $_POST["uname"];
+    $pa = $_POST["psw"];
+    $pa = md5($pa);
 
-        $qr = "
+    $qr = "
         SELECT * FROM users 
         WHERE Username = '$un'
         AND Passwords = '$pa'   
     ";
-        $con = myConnect();
-        $user = mysqli_query($con, $qr);
-        if (mysqli_num_rows($user) == 1) {
-                $row_user = mysqli_fetch_array($user);
-                $_SESSION['ID_User'] = $row_user['ID_User'];
-                $_SESSION['Username'] = $row_user['Username'];
-                $_SESSION['Hoten'] = $row_user['Hoten'];
-                $_SESSION['Groups'] = $row_user['Groups'];
-            }
+    $con = myConnect();
+    $user = mysqli_query($con, $qr);
+    if (mysqli_num_rows($user) == 1) {
+        $row_user = mysqli_fetch_array($user);
+        $_SESSION['ID_User'] = $row_user['ID_User'];
+        $_SESSION['Username'] = $row_user['Username'];
+        $_SESSION['Hoten'] = $row_user['Hoten'];
+        $_SESSION['Groups'] = $row_user['Groups'];
     }
+}
 ?>
 
 <!-- logout -->
 <?php
 if (isset($_POST["btnLogout"])) {
-        unset($_SESSION['ID_User']);
-        unset($_SESSION['Username']);
-        unset($_SESSION['Hoten']);
-        unset($_SESSION['Groups']);
-    }
+    unset($_SESSION['ID_User']);
+    unset($_SESSION['Username']);
+    unset($_SESSION['Hoten']);
+    unset($_SESSION['Groups']);
+}
 ?>
 
 <!-- buy -->
 <?php
 if (!isset($_SESSION['cart'])) {
-        $_SESSION['indexs'] = 0;
-        $shop = array(
-            array("0", "0")
-        );
-        $_SESSION['cart'] = $shop;
-    }
+    $_SESSION['indexs'] = 0;
+    $shop = array(
+        array("0", "0")
+    );
+    $_SESSION['cart'] = $shop;
+}
 
 if (isset($_POST["btnBuy"])) {
-        $_SESSION['indexs'] += 1;
-        $shopitem =  $_POST["item"];
-        $shopnum =  $_POST["num"];
-        array_push($_SESSION['cart'], array("$shopitem", "$shopnum"));
-    }
+    $_SESSION['indexs'] += 1;
+    $shopitem =  $_POST["item"];
+    $shopnum =  $_POST["num"];
+    array_push($_SESSION['cart'], array("$shopitem", "$shopnum"));
+}
 ?>
 
 <!-- delete cart-->
 <?php
 if (isset($_POST["btnCancel"])) {
-        unset($_SESSION['cart']);
-        unset($_SESSION['indexs']);
-    }
+    unset($_SESSION['cart']);
+    unset($_SESSION['indexs']);
+}
 ?>
 
 <!doctype html>
@@ -112,8 +112,8 @@ if (isset($_POST["btnCancel"])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/layout.css" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
@@ -134,23 +134,23 @@ if (isset($_POST["btnCancel"])) {
         case "login":
             {
                 if (!isset($_SESSION['ID_User'])) {
-                        require "blocks/formLogin.php";
-                    } else {
-                        require "pages/homepage.php";
-                    }
+                    require "blocks/formLogin.php";
+                } else {
+                    require "pages/homepage.php";
+                }
                 break;
             }
         case "signup":
             {
                 if (!isset($_SESSION['ID_User'])) {
-                        if (isset($_POST["btnSignup"]) && ($register == true)) {
-                                require "blocks/signupsuccess.php";
-                            } else {
-                            require "blocks/signup.php";
-                        }
+                    if (isset($_POST["btnSignup"]) && ($register == true)) {
+                        require "blocks/signupsuccess.php";
                     } else {
-                        require "pages/homepage.php";
+                        require "blocks/signup.php";
                     }
+                } else {
+                    require "pages/homepage.php";
+                }
                 break;
             }
         case "search":
@@ -168,8 +168,8 @@ if (isset($_POST["btnCancel"])) {
         case "profile":
             {
                 if (!isset($_SESSION['ID_User'])) {
-                        require "blocks/formLogin.php";
-                    } else require "pages/profile.php";
+                    require "blocks/formLogin.php";
+                } else require "pages/profile.php";
                 break;
             }
         case "accessory":

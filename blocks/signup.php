@@ -15,22 +15,21 @@
     <br>
 
     <?php
-    if (isset($_POST["btnSignup"]) && ($register == FALSE))
-    {
-        $check_username = check_uniqueuser($_POST["uname"]);
+    if (isset($_POST["btnSignup"]) && ($register == false)) {
+            $check_username = check_uniqueuser($_POST["uname"]);
+            ?>
+    <div class="container" style="background-color:red;padding: 14px 20px;text-align: center;color:white">
+        Đăng ký <b>THẤT BẠI</b>. Xin vui lòng thử lại !<br>
+        <?php
+        if (mysqli_num_rows($check_username) == 1) {
+                echo "<b>Lỗi:</b> Username đã được sử dụng";
+            }
         ?>
-            <div class="container" style="background-color:red;padding: 14px 20px;text-align: center;color:white">
-                Đăng ký <b>THẤT BẠI</b>. Xin vui lòng thử lại !<br>
-                <?php
-                if (mysqli_num_rows($check_username) == 1)
-                {
-                    echo "<b>Lỗi:</b> Username đã được sử dụng";
-                }
-                ?>
-            </div>
-            <br>
-            <?php
-    }   ?>
+    </div>
+    <br>
+    <?php
+
+}   ?>
 
 
     <div class="container">
@@ -60,4 +59,4 @@
 
         <button type="submit" name="btnSignup" style="margin-top: 25px" class="loginbtn">SIGN UP</button>
     </div>
-</form>
+</form> 

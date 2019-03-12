@@ -13,7 +13,7 @@ function SachMoiNhat($ID_TheLoai)
     return $result;
 }
 
-function DanhMucSach($ID_TheLoai,$from,$numperpage)
+function DanhMucSach($ID_TheLoai, $from, $numperpage)
 {
     $con = myConnect();
     $qr = "
@@ -27,7 +27,7 @@ function DanhMucSach($ID_TheLoai,$from,$numperpage)
 }
 
 
-function TimKiemSach($Tukhoa,$from,$numperpage)
+function TimKiemSach($Tukhoa, $from, $numperpage)
 {
     $con = myConnect();
     $qr = "
@@ -121,7 +121,7 @@ function Count_sach($Tukhoa)
     return $result;
 }
 
-function SPlienquan($ID_Theloai,$ID_sanphamhientai)
+function SPlienquan($ID_Theloai, $ID_sanphamhientai)
 {
     $con = myConnect();
     $qr = "
@@ -189,7 +189,7 @@ function CheckSLTon($ID_Sach)
     return $result;
 }
 
-function UpdateSoLuong($ID_Sach,$num)
+function UpdateSoLuong($ID_Sach, $num)
 {
     $con = myConnect();
     $qr = "
@@ -211,4 +211,4 @@ function GetOrderInfo($ID_User)
     $result = mysqli_query($con, $qr);
     return $result;
 }
-?>
+ 

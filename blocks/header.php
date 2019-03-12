@@ -57,31 +57,31 @@
 
                 <div class="mr-sm-2">
                     <?php
-                    if (isset($_SESSION['ID_User']))
-                    { ?>
-                        <a href="index.php?p=profile"><i class="fas fa-user" style="color:red"></i></a>
-                    <?php }
-                    else { ?>
-                        <a href="index.php?p=login"><i class="fas fa-sign-in-alt" style="color:red;font-size: 20px"></i></a>
-                    <?php } ?>
+                    if (isset($_SESSION['ID_User'])) { ?>
+                    <a href="index.php?p=profile"><i class="fas fa-user" style="color:red"></i></a>
+                    <?php 
+                } else { ?>
+                    <a href="index.php?p=login"><i class="fas fa-sign-in-alt" style="color:red;font-size: 20px"></i></a>
+                    <?php 
+                } ?>
 
                     <a href="index.php?p=search"><i class="fas fa-search" style="margin-left: 10px;"></i></a>
 
                     <?php
-                    if (!isset($_SESSION['cart']) || $_SESSION['indexs'] == 0)
-                    {
-                    ?>
+                    if (!isset($_SESSION['cart']) || $_SESSION['indexs'] == 0) {
+                        ?>
                     <a href="index.php?p=giohang"><i class="fas fa-shopping-cart" style="margin-left: 10px;"></i></a>
-                        <?php
-                    }
-                    else { ?>
-                        <a href="index.php?p=giohang"><i class="fas fa-shopping-cart" style="margin-left: 10px;color:red"></i></a>
-                        <?php
-                    }
-                    ?>
+                    <?php
+
+                } else { ?>
+                    <a href="index.php?p=giohang"><i class="fas fa-shopping-cart" style="margin-left: 10px;color:red"></i></a>
+                    <?php
+
+                }
+                ?>
 
                 </div>
             </div>
         </nav>
     </div>
-</div>
+</div> 

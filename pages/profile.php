@@ -42,12 +42,12 @@ $row_user = mysqli_fetch_array($user);
 
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-sm-3">
             <img src="img/img_avatar.png" width="280" height="auto" alt="book_preview" />
         </div>
 
 
-        <div class="col-9">
+        <div class="col-sm-9">
             <form name="editInfo" method="POST">
                 <div class="form-group row">
                     <label for="Hoten" class="col-3 col-form-label" style="text-align: end; padding: 12px 20px;margin: 8px 0;">

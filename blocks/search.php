@@ -21,4 +21,4 @@
 
         <button type="submit" style="margin-top: 25px" class="loginbtn">SEARCH</button>
     </div>
-</form>
+</form> 
