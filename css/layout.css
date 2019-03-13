@@ -133,7 +133,7 @@ input[type=text], input[type=password], input[type=number], input[type=date], in
 }
 
 .checkoutbtn {
-    background-color: green;
+    background-color: goldenrod;
     color: white;
     border: none;
     padding: 7px 105px;
@@ -151,7 +151,7 @@ button:hover {
     border: none;
     cursor: pointer;
     color: white;
-    background-color: #be2a2b;
+    background-color: #ff3a3b;
 }
 
 #header {

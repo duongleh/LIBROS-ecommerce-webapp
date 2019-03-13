@@ -61,6 +61,7 @@ if (isset($_POST["btnLogin"])) {
         $_SESSION['Username'] = $row_user['Username'];
         $_SESSION['Hoten'] = $row_user['Hoten'];
         $_SESSION['Groups'] = $row_user['Groups'];
+        $_SESSION['Diachi'] = $row_user['Diachi'];
     }
 }
 ?>
@@ -72,6 +73,7 @@ if (isset($_POST["btnLogout"])) {
     unset($_SESSION['Username']);
     unset($_SESSION['Hoten']);
     unset($_SESSION['Groups']);
+    unset($_SESSION['Diachi']);
 }
 ?>
 
@@ -80,7 +82,7 @@ if (isset($_POST["btnLogout"])) {
 if (!isset($_SESSION['cart'])) {
     $_SESSION['indexs'] = 0;
     $shop = array(
-        array("0", "0")
+        array("0", "0","0")
     );
     $_SESSION['cart'] = $shop;
 }
@@ -89,7 +91,10 @@ if (isset($_POST["btnBuy"])) {
     $_SESSION['indexs'] += 1;
     $shopitem =  $_POST["item"];
     $shopnum =  $_POST["num"];
-    array_push($_SESSION['cart'], array("$shopitem", "$shopnum"));
+    $shopprice = getBookPrice($shopitem);
+    $row_shopprice = mysqli_fetch_array($shopprice);
+    $itemTotalPrice =   $row_shopprice["Giasach"] * $shopnum;
+    array_push($_SESSION['cart'], array("$shopitem", "$shopnum", "$itemTotalPrice"));
 }
 ?>
 

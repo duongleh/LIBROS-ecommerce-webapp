@@ -10,9 +10,9 @@
 
 <?php
 if (isset($_POST["Checkoutbtn"])) {
-        require "blocks/checkout_success.php";
-    } else {
-        ?>
+    require "blocks/checkout_success.php";
+} else {
+    ?>
 
 <div class="container">
     <div class="container" style="background-color:#be2a2b;color: white;padding: 14px 20px;text-align: center">
@@ -21,7 +21,7 @@ if (isset($_POST["Checkoutbtn"])) {
     <br>
     <?php
     if ($_SESSION['indexs'] == 0) {
-            ?>
+        ?>
     <div class="container" style="background-color:red;color:white;padding: 14px 20px;text-align: center">
         Giỏ hàng rỗng. Hãy tiếp tục mua sắm !
     </div>
@@ -34,7 +34,7 @@ if (isset($_POST["Checkoutbtn"])) {
     <?php
 
 } else {
-        ?>
+    ?>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -59,9 +59,9 @@ if (isset($_POST["Checkoutbtn"])) {
                 <br>
                 <?php
                 if (isset($_POST["Shipbtn"])) {
-                        if ($_POST['ship'] == 2) {
-                                $_SESSION['ship'] = 30000;
-                                ?>
+                    if ($_POST['ship'] == 2) {
+                        $_SESSION['ship'] = 30000;
+                        ?>
                 <form name="ship" method="POST">
                     <b style="font-size: 20px">CHỌN HÌNH THỨC GIAO HÀNG</b>
                     <div class="form-check">
@@ -109,9 +109,9 @@ if (isset($_POST["Checkoutbtn"])) {
                 <?php
 
             }
-    } else {
-        $_SESSION['ship'] = 0;
-        ?>
+        } else {
+            $_SESSION['ship'] = 0;
+            ?>
                 <form name="ship" method="POST">
                     <b style="font-size: 20px">CHỌN HÌNH THỨC GIAO HÀNG</b>
                     <div class="form-check">
@@ -131,7 +131,7 @@ if (isset($_POST["Checkoutbtn"])) {
                 <?php
 
             }
-        ?>
+            ?>
 
 
                 <div class="row">
@@ -180,24 +180,24 @@ if (isset($_POST["Checkoutbtn"])) {
                 <?php
                 $tongtien = 0;
                 for ($i = 1; $i <= $_SESSION['indexs']; $i++) {
-                        $sach1 = GetSach($_SESSION['cart'][$i][0]);
-                        $row_sachh1 = mysqli_fetch_array($sach1);
-                        $tongtien += $_SESSION['cart'][$i][1] * $row_sachh1['Giasach'];
-                        ?>
+                    $sach1 = GetSach($_SESSION['cart'][$i][0]);
+                    $row_sachh1 = mysqli_fetch_array($sach1);
+                    $tongtien += $_SESSION['cart'][$i][2];
+                    ?>
                 <div class="row">
                     <div class="col">
                         <br><br><b><?php echo $_SESSION['cart'][$i][1] ?></b> x <?php echo $row_sachh1['Tensach'] ?>
 
                     </div>
                     <div class="col">
-                        <br><br><b><?php echo number_format($_SESSION['cart'][$i][1] * $row_sachh1['Giasach']); ?> đ</b>
+                        <br><br><b><?php echo number_format($_SESSION['cart'][$i][2]); ?> đ</b>
                     </div>
                 </div>
                 <?php
 
             }
-        $_SESSION['total'] = $tongtien;
-        ?>
+            $_SESSION['total'] = $tongtien;
+            ?>
                 <br>
                 <div class="row">
                     <div class="col mx-auto">

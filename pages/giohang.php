@@ -113,7 +113,7 @@
             </div>
             <div class="col" style="text-align: end">
                 <a href="index.php?p=checkout">
-                    <button type="submit" name="btnPay" class="btn btn-success">Thanh toán<i class="fas fa-chevron-right" style="margin-left: 10px"></i></button>
+                    <button type="submit" name="btnPay" class="btn btn-success">Thanh toán giỏ hàng<i class="fas fa-chevron-right" style="margin-left: 10px"></i></button>
                 </a>
             </div>
         </div>

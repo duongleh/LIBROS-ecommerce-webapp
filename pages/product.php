@@ -15,15 +15,15 @@ $row_sp = mysqli_fetch_array($sp);
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-12 col-xl-6 text-center" style="margin-top: 40px;margin-bottom: 40px">
+        <div class="col-12 col-sm-6 text-center" style="margin-top: 40px;margin-bottom: 40px">
             <img src="upload/sach/images/<?php if ($row_sp['ID_Sach'] <= 273) {
-                                                    echo $row_sp['Hinhanh'];
-                                                } else {
-                                                    echo "new/";
-                                                    echo $row_sp['Hinhanh'];
-                                                } ?>" alt="book_preview" width="280" height="auto">
+                                                echo $row_sp['Hinhanh'];
+                                            } else {
+                                                echo "new/";
+                                                echo $row_sp['Hinhanh'];
+                                            } ?>" alt="book_preview" width="280" height="auto">
         </div>
-        <div class="col-12 col-xl-6 text-center">
+        <div class="col-12 col-sm-6 text-center">
 
             <h1 class="product_title"><?php echo $row_sp['Tensach'] ?></h1>
             <b class="price" style="font-size: 35px"><?php echo number_format($row_sp['Giasach']) ?> đ</b>
@@ -67,15 +67,15 @@ $row_sp = mysqli_fetch_array($sp);
         <?php
         $splq = SPlienquan($row_sp['ID_Theloai'], $row_sp['ID_Sach']);
         while ($row_splq = mysqli_fetch_array($splq)) {
-                ?>
+            ?>
         <div class="col-6 col-xl-3 text-center">
             <a href="index.php?p=product&ID_Sach=<?php echo $row_splq['ID_Sach'] ?>">
                 <img src="upload/sach/images/<?php if ($row_splq['ID_Sach'] <= 273) {
-                                                        echo $row_splq['Hinhanh'];
-                                                    } else {
-                                                        echo "new/";
-                                                        echo $row_splq['Hinhanh'];
-                                                    } ?>" alt="book_preview" width="auto" height="110">
+                                                    echo $row_splq['Hinhanh'];
+                                                } else {
+                                                    echo "new/";
+                                                    echo $row_splq['Hinhanh'];
+                                                } ?>" alt="book_preview" width="auto" height="110">
                 <h6 style="margin-top:10px"><?php echo $row_splq['Tensach'] ?></h6>
             </a>
             <b><?php echo number_format($row_splq['Giasach']) ?> đ</b>

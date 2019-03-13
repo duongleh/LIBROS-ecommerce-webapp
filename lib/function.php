@@ -201,6 +201,17 @@ function UpdateSoLuong($ID_Sach, $num)
     return $result;
 }
 
+function getBookPrice($ID_Sach)
+{
+    $con = myConnect();
+    $qr = "
+		SELECT * FROM sach
+		WHERE ID_Sach = '$ID_Sach'
+	";
+    $result = mysqli_query($con, $qr);
+    return $result;
+}
+
 function GetOrderInfo($ID_User)
 {
     $con = myConnect();
@@ -211,4 +222,14 @@ function GetOrderInfo($ID_User)
     $result = mysqli_query($con, $qr);
     return $result;
 }
- 
+
+function GetOrderDetail($ID_Donhang)
+{
+    $con = myConnect();
+    $qr = "
+	    SELECT chitietdonhang.Soluong,sach.Tensach FROM chitietdonhang,sach
+		WHERE ID_Donhang = '$ID_Donhang' AND chitietdonhang.ID_Sach = sach.ID_Sach
+	";
+    $result = mysqli_query($con, $qr);
+    return $result;
+}
