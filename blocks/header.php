@@ -47,7 +47,7 @@
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php?p=accessory"><b style="font-size: 22px;margin-right: 25px">ACCESSORY</b><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#"><b style="font-size: 22px;margin-right: 25px">ACCESSORY</b><span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php?p=aboutus"><b style="font-size: 22px;margin-right: 25px">ABOUT US</b><span class="sr-only">(current)</span></a>
