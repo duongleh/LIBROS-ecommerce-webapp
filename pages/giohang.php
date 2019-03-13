@@ -59,7 +59,7 @@
 
         <div class="row justify-content-center">
             <div class="col-6 col-sm-2 text-center">
-                <img src="upload/sach/images/<?php if ($row_sachh1['ID_Sach'] <= 273) {
+                <img src="upload/images/<?php if ($row_sachh1['ID_Sach'] <= 273) {
                                                     echo $row_sachh1['Hinhanh'];
                                                 } else {
                                                     echo "new/";

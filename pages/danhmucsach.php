@@ -39,7 +39,7 @@ $row_tentheloai = mysqli_fetch_array($tentheloai);
                         ?>
                 <div class="col-4 col-xl-3 text-center" style="margin-top:30px">
                     <a href="index.php?p=product&ID_Sach=<?php echo $row_phantrang['ID_Sach'] ?>">
-                        <img src="upload/sach/images/<?php if ($row_phantrang['ID_Sach'] <= 273) {
+                        <img src="upload/images/<?php if ($row_phantrang['ID_Sach'] <= 273) {
                                                                 echo $row_phantrang['Hinhanh'];
                                                             } else {
                                                                 echo "new/";

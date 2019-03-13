@@ -16,7 +16,7 @@ $row_sp = mysqli_fetch_array($sp);
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-6 text-center" style="margin-top: 40px;margin-bottom: 40px">
-            <img src="upload/sach/images/<?php if ($row_sp['ID_Sach'] <= 273) {
+            <img src="upload/images/<?php if ($row_sp['ID_Sach'] <= 273) {
                                                 echo $row_sp['Hinhanh'];
                                             } else {
                                                 echo "new/";
@@ -70,7 +70,7 @@ $row_sp = mysqli_fetch_array($sp);
             ?>
         <div class="col-6 col-xl-3 text-center">
             <a href="index.php?p=product&ID_Sach=<?php echo $row_splq['ID_Sach'] ?>">
-                <img src="upload/sach/images/<?php if ($row_splq['ID_Sach'] <= 273) {
+                <img src="upload/images/<?php if ($row_splq['ID_Sach'] <= 273) {
                                                     echo $row_splq['Hinhanh'];
                                                 } else {
                                                     echo "new/";

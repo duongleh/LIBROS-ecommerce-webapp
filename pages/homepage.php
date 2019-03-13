@@ -31,7 +31,7 @@ for ($i = 0; $i < $arr_length; $i++) {
                 ?>
             <div class="col-4 col-xl-2 text-center">
                 <a href="index.php?p=product&ID_Sach=<?php echo $row_sausachmoi['ID_Sach'] ?>">
-                    <img src="upload/sach/images/<?php if ($row_sausachmoi['ID_Sach'] <= 273) {
+                    <img src="upload/images/<?php if ($row_sausachmoi['ID_Sach'] <= 273) {
                                                       echo $row_sausachmoi['Hinhanh'];
                                                     } else {
                                                       echo "new/";
