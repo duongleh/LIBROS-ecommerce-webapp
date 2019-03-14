@@ -52,33 +52,32 @@
         <?php
         $tongtien = 0;
         for ($i = 1; $i <= $_SESSION['indexs']; $i++) {
-            $sach1 = GetSach($_SESSION['cart'][$i][0]);
-            $row_sachh1 = mysqli_fetch_array($sach1);
-            $tongtien += $_SESSION['cart'][$i][1] * $row_sachh1['Giasach'];
+            $cartItem = SanPhamSach(($_SESSION['cart'][$i][0]));
+            $row_cartItem = mysqli_fetch_array($cartItem);
+            $tongtien += $_SESSION['cart'][$i][2];
             ?>
 
         <div class="row justify-content-center">
             <div class="col-6 col-sm-2 text-center">
-                <img src="upload/images/<?php if ($row_sachh1['ID_Sach'] <= 273) {
-                                                    echo $row_sachh1['Hinhanh'];
-                                                } else {
-                                                    echo "new/";
-                                                    echo $row_sachh1['Hinhanh'];
-                                                } ?>" alt="book_preview" width="auto" height="150">
+                <img src="upload/images/<?php if ($row_cartItem['Hinhanh'] == null) {
+                                            echo "book_preview.png";
+                                        } else {
+                                            echo $row_cartItem['Hinhanh'];
+                                        } ?>" alt="book_preview" width="auto" height="150">
             </div>
             <div class="col-6 col-sm-4 text-center align-self-center">
-                <a href="index.php?p=product&ID_Sach=<?php echo $row_sachh1['ID_Sach'] ?>">
-                    <p style="font-size: 20px"><?php echo $row_sachh1['Tensach']; ?></p>
+                <a href="index.php?p=product&ID_Sach=<?php echo $row_cartItem['ID_Sach'] ?>">
+                    <p style="font-size: 20px"><?php echo $row_cartItem['Tensach']; ?></p>
                 </a>
             </div>
             <div class="col-4 col-sm-2 text-center align-self-center">
-                <p style="font-size: 20px"><?php echo number_format($row_sachh1['Giasach']); ?> đ</p>
+                <p style="font-size: 20px"><?php echo number_format($row_cartItem['Giasach']); ?> đ</p>
             </div>
             <div class="col-4 col-sm-2 text-center align-self-center">
                 <p style="font-size: 20px"><?php echo $_SESSION['cart'][$i][1]; ?></p>
             </div>
             <div class="col-4 col-sm-2 text-center align-self-center">
-                <p style="font-size: 20px"><?php echo number_format($_SESSION['cart'][$i][1] * $row_sachh1['Giasach']); ?> đ</p>
+                <p style="font-size: 20px"><?php echo number_format($_SESSION['cart'][$i][2]); ?> đ</p>
             </div>
         </div>
         <div class="row">

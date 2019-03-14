@@ -4,8 +4,8 @@ function SachMoiNhat($ID_TheLoai)
 {
     $con = myConnect();
     $qr = "
-		SELECT * FROM sach
-		WHERE ID_Theloai = '$ID_TheLoai' AND an_hien = 1
+		SELECT * FROM sach,theloai
+		WHERE sach.ID_Theloai = '$ID_TheLoai' AND an_hien = 1 AND sach.ID_Theloai = theloai.ID_Theloai
 		ORDER BY ID_Sach ASC
 		LIMIT 0,6
 	";
@@ -40,25 +40,13 @@ function TimKiemSach($Tukhoa, $from, $numperpage)
     return $result;
 }
 
-function TimTatcaSach($Tukhoa)
+function PhanLoaiDanhMuc($Tukhoa)
 {
     $con = myConnect();
     $qr = "
-        SELECT ID_Theloai,COUNT(ID_Theloai) FROM sach
-        WHERE Tensach REGEXP '$Tukhoa' AND an_hien = 1
-        GROUP BY ID_Theloai
-        ORDER BY COUNT(ID_Theloai) DESC
-	";
-    $result = mysqli_query($con, $qr);
-    return $result;
-}
-
-function TimSLTatcaSach($Tukhoa)
-{
-    $con = myConnect();
-    $qr = "
-        SELECT * FROM sach
-        WHERE Tensach REGEXP '$Tukhoa' AND an_hien = 1        
+        SELECT sach.ID_Theloai,COUNT(sach.ID_Theloai),Theloai FROM sach,theloai
+        WHERE Tensach REGEXP '$Tukhoa' AND an_hien = 1 AND sach.ID_Theloai = theloai.ID_Theloai
+        GROUP BY sach.ID_Theloai ORDER BY COUNT(sach.ID_Theloai) DESC
 	";
     $result = mysqli_query($con, $qr);
     return $result;
@@ -68,30 +56,8 @@ function SanPhamSach($ID_Sach)
 {
     $con = myConnect();
     $qr = "
-		SELECT * FROM sach
-		WHERE ID_Sach = '$ID_Sach' AND an_hien = 1
-	";
-    $result = mysqli_query($con, $qr);
-    return $result;
-}
-
-function GetNXB($ID_NXB)
-{
-    $con = myConnect();
-    $qr = "
-		SELECT * FROM nxb
-		WHERE ID_NXB = '$ID_NXB'
-	";
-    $result = mysqli_query($con, $qr);
-    return $result;
-}
-
-function GetTL($ID_Theloai)
-{
-    $con = myConnect();
-    $qr = "
-		SELECT * FROM theloai
-		WHERE ID_Theloai = '$ID_Theloai'
+		SELECT * FROM sach,nxb
+		WHERE ID_Sach = '$ID_Sach' AND an_hien = 1 AND sach.ID_NXB = nxb.ID_NXB
 	";
     $result = mysqli_query($con, $qr);
     return $result;
@@ -101,9 +67,9 @@ function Count_sachTL($ID_Theloai)
 {
     $con = myConnect();
     $qr = "
-	SELECT COUNT(Tensach)
-	FROM sach
-	WHERE ID_Theloai= '$ID_Theloai' AND an_hien = 1
+	SELECT COUNT(Tensach),Theloai
+	FROM sach,theloai
+	WHERE sach.ID_Theloai= '$ID_Theloai' AND an_hien = 1 AND sach.ID_Theloai=theloai.ID_Theloai
 	";
     $result = mysqli_query($con, $qr);
     return $result;
@@ -167,17 +133,6 @@ function check_password($Passwords)
     return $result;
 }
 
-function GetSach($ID_Sach)
-{
-    $con = myConnect();
-    $qr = "
-		SELECT * FROM sach
-		WHERE ID_Sach = '$ID_Sach'
-	";
-    $result = mysqli_query($con, $qr);
-    return $result;
-}
-
 function CheckSLTon($ID_Sach)
 {
     $con = myConnect();
@@ -196,17 +151,6 @@ function UpdateSoLuong($ID_Sach, $num)
 		UPDATE soluong
         SET SLTon = SLTon - $num, SLBan =SLBan + $num
         WHERE ID_Sach = '$ID_Sach'
-	";
-    $result = mysqli_query($con, $qr);
-    return $result;
-}
-
-function getBookPrice($ID_Sach)
-{
-    $con = myConnect();
-    $qr = "
-		SELECT * FROM sach
-		WHERE ID_Sach = '$ID_Sach'
 	";
     $result = mysqli_query($con, $qr);
     return $result;

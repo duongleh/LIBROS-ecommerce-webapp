@@ -180,13 +180,13 @@ if (isset($_POST["Checkoutbtn"])) {
                 <?php
                 $tongtien = 0;
                 for ($i = 1; $i <= $_SESSION['indexs']; $i++) {
-                    $sach1 = GetSach($_SESSION['cart'][$i][0]);
-                    $row_sachh1 = mysqli_fetch_array($sach1);
+                    $cartItem = SanPhamSach(($_SESSION['cart'][$i][0]));
+                    $row_cartItem = mysqli_fetch_array($cartItem);
                     $tongtien += $_SESSION['cart'][$i][2];
                     ?>
                 <div class="row">
                     <div class="col">
-                        <br><br><b><?php echo $_SESSION['cart'][$i][1] ?></b> x <?php echo $row_sachh1['Tensach'] ?>
+                        <br><br><b><?php echo $_SESSION['cart'][$i][1] ?></b> x <?php echo $row_cartItem['Tensach'] ?>
 
                     </div>
                     <div class="col">

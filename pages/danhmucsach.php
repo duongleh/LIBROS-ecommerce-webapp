@@ -8,27 +8,25 @@
 </div>
 
 <?php
-$tentheloai = GetTL($IDTL);
-$row_tentheloai = mysqli_fetch_array($tentheloai);
+$tongsach = Count_sachTL($IDTL);
+$row_tongsach = mysqli_fetch_array($tongsach);
 ?>
 
 <br>
 <div class="container-fluid">
     <div class="row" style="margin-left: 20px;margin-right: 20px">
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-sm-3">
             <div style="margin-left:10px">
                 <h3> DANH MỤC</h3>
                 <br>
                 <p>
-                    <?php echo $row_tentheloai['Theloai'];
-                    $tongsach = Count_sachTL($IDTL);
-                    $row_tongsach = mysqli_fetch_array($tongsach); ?>
+                    <?php echo $row_tongsach['Theloai']; ?>
                     (<?php echo $row_tongsach['COUNT(Tensach)']; ?>)
                 </p>
             </div>
         </div>
 
-        <div class="col-12 col-xl-8">
+        <div class="col-12 col-sm-9">
             <div class="row">
                 <?php
                 $numperpage = 12;
@@ -36,15 +34,14 @@ $row_tentheloai = mysqli_fetch_array($tentheloai);
                 $phantrang = DanhMucSach($IDTL, $from, $numperpage);
 
                 while ($row_phantrang = mysqli_fetch_array($phantrang)) {
-                        ?>
+                    ?>
                 <div class="col-4 col-xl-3 text-center" style="margin-top:30px">
                     <a href="index.php?p=product&ID_Sach=<?php echo $row_phantrang['ID_Sach'] ?>">
-                        <img src="upload/images/<?php if ($row_phantrang['ID_Sach'] <= 273) {
-                                                                echo $row_phantrang['Hinhanh'];
-                                                            } else {
-                                                                echo "new/";
-                                                                echo $row_phantrang['Hinhanh'];
-                                                            } ?>" alt="book_preview" width="70" height="auto">
+                        <img src="upload/images/<?php if ($row_phantrang['Hinhanh'] == null) {
+                                                    echo "book_preview.png";
+                                                } else {
+                                                    echo $row_phantrang['Hinhanh'];
+                                                } ?>" alt="book_preview" width="70" height="auto">
                         <h6 style="margin-top:10px"><?php echo $row_phantrang['Tensach'] ?></h6>
                     </a>
                     <b><?php echo number_format($row_phantrang['Giasach']) ?> đ</b>
@@ -52,7 +49,7 @@ $row_tentheloai = mysqli_fetch_array($tentheloai);
                 <?php
 
             }
-        ?>
+            ?>
             </div>
         </div>
     </div>

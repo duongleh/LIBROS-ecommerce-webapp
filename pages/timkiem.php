@@ -11,11 +11,11 @@
 
 <?php
 if (isset($_GET["search"])) {
-        $Tukhoa = $_GET["search"];
-        $numperpage = 12;
-        $from = ($page - 1) * $numperpage;
-        $phantrang = TimKiemSach($Tukhoa, $from, $numperpage);
-        if (mysqli_num_rows($phantrang) == 0) { ?>
+    $Tukhoa = $_GET["search"];
+    $numperpage = 12;
+    $from = ($page - 1) * $numperpage;
+    $phantrang = TimKiemSach($Tukhoa, $from, $numperpage);
+    if (mysqli_num_rows($phantrang) == 0) { ?>
 <a href="index.php?p=search">
     <div class="container" style="background-color:#be2a2b;color: white;padding: 14px 20px;text-align: center">
         <b>SEARCH</b>
@@ -30,30 +30,30 @@ if (isset($_GET["search"])) {
 <?php
 
 } else {
-        ?>
+    ?>
 
 <br>
 <div class="container-fluid">
     <div class="row" style="margin-left: 20px;margin-right: 20px">
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-sm-3">
             <div style="margin-left:10px">
                 <?php
-                $tongtatcasach = TimSLTatcaSach($Tukhoa);
+                $phanloaisach = PhanLoaiDanhMuc($Tukhoa);
+                $sum_phanloaisach = 0;
+                while ($row_phanloaisach = mysqli_fetch_array($phanloaisach)) {
+                        $sum_phanloaisach += $row_phanloaisach['COUNT(sach.ID_Theloai)'];
+                    }
                 ?>
-                <h3> DANH MỤC (<?php echo mysqli_num_rows($tongtatcasach) ?> kết quả)</h3>
+                <h3> DANH MỤC (<?php echo $sum_phanloaisach; ?> kết quả)</h3>
                 <br>
                 <?php
-                $tatcasach = TimTatcaSach($Tukhoa);
-                while ($row_tatcasach = mysqli_fetch_array($tatcasach)) {
-                        ?>
+                mysqli_data_seek($phanloaisach, 0);
+                while ($row_phanloaisach = mysqli_fetch_array($phanloaisach)) {
+                    ?>
                 <p>
-                    <?php
-                    $tentheloai = GetTL($row_tatcasach['ID_Theloai']);
-                    $row_tentheloai = mysqli_fetch_array($tentheloai); ?>
-                    <a href="index.php?p=danhmucsach&ID_TheLoai=<?php
-                                                                echo $row_tentheloai['ID_Theloai'] ?>"> <?php
-                                                            echo $row_tentheloai['Theloai']; ?> </a>
-                    (<?php echo $row_tatcasach['COUNT(ID_Theloai)']; ?>)
+                    <a href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_phanloaisach['ID_Theloai'] ?>">
+                        <?php echo $row_phanloaisach['Theloai']; ?> </a>
+                    (<?php echo $row_phanloaisach['COUNT(sach.ID_Theloai)']; ?>)
                     <br>
                 </p>
                 <?php 
@@ -61,20 +61,18 @@ if (isset($_GET["search"])) {
             </div>
         </div>
 
-        <div class="col-12 col-xl-8">
+        <div class="col-12 col-sm-9">
             <div class="row">
-
                 <?php
                 while ($row_phantrang = mysqli_fetch_array($phantrang)) {
-                        ?>
+                    ?>
                 <div class="col-4 col-xl-3 text-center" style="margin-top:30px">
                     <a href="index.php?p=product&ID_Sach=<?php echo $row_phantrang['ID_Sach'] ?>">
-                        <img src="upload/images/<?php if ($row_phantrang['ID_Sach'] <= 273) {
-                                                                echo $row_phantrang['Hinhanh'];
-                                                            } else {
-                                                                echo "new/";
-                                                                echo $row_phantrang['Hinhanh'];
-                                                            } ?>" alt="book_preview" width="70" height="auto">
+                        <img src="upload/images/<?php if ($row_phantrang['ID_Sach'] == null) {
+                                                    echo "book_preview.png";
+                                                } else {
+                                                    echo $row_phantrang['Hinhanh'];
+                                                } ?>" alt="book_preview" width="70" height="auto">
                         <h6 style="margin-top:10px"><?php echo $row_phantrang['Tensach'] ?></h6>
                     </a>
                     <b><?php echo number_format($row_phantrang['Giasach']) ?> đ</b>
@@ -82,7 +80,7 @@ if (isset($_GET["search"])) {
                 <?php
 
             }
-        ?>
+            ?>
             </div>
         </div>
     </div>

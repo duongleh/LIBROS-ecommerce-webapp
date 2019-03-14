@@ -7,10 +7,8 @@ require("lib/quantri.php");
 <?php
 if (isset($_GET["p"])) $p = $_GET["p"];
 else $p = "";
-
 if (isset($_GET["ID_TheLoai"])) $IDTL = $_GET["ID_TheLoai"];
 else $IDTL = "";
-
 if (isset($_GET["ID_Sach"])) $IDS = $_GET["ID_Sach"];
 else $IDS = "";
 if (isset($_GET["page"])) $page = $_GET["page"];
@@ -82,7 +80,7 @@ if (isset($_POST["btnLogout"])) {
 if (!isset($_SESSION['cart'])) {
     $_SESSION['indexs'] = 0;
     $shop = array(
-        array("0", "0","0")
+        array("0", "0", "0")
     );
     $_SESSION['cart'] = $shop;
 }
@@ -91,7 +89,7 @@ if (isset($_POST["btnBuy"])) {
     $_SESSION['indexs'] += 1;
     $shopitem =  $_POST["item"];
     $shopnum =  $_POST["num"];
-    $shopprice = getBookPrice($shopitem);
+    $shopprice = SanPhamSach($shopitem);
     $row_shopprice = mysqli_fetch_array($shopprice);
     $itemTotalPrice =   $row_shopprice["Giasach"] * $shopnum;
     array_push($_SESSION['cart'], array("$shopitem", "$shopnum", "$itemTotalPrice"));
