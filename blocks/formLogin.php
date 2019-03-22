@@ -38,7 +38,7 @@
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit" name="btnLogin" style="margin-top: 25px" class="loginbtn">LOGIN</button>
+        <button type="submit" name="btnLogin" style="margin-top: 25px" class="loginbtn"><b>LOGIN</b></button>
         <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-top: 15px"> Remember me
         </label>

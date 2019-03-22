@@ -20,6 +20,10 @@ if (isset($_POST["btnUpdate"])) {
 	";
     $con = myConnect();
     $user_info = mysqli_query($con, $qr);
+    if ($user_info) {
+            $_SESSION['Hoten'] = $Hoten;
+            $_SESSION['Diachi'] = $Diachi;
+        }
 }
 $user = check_username($_SESSION['Username']);
 $row_user = mysqli_fetch_array($user);
@@ -117,76 +121,15 @@ $row_user = mysqli_fetch_array($user);
     <br>
 </div>
 
-<div class="container">
-    <div class="container" style="background-color:#be2a2b;color: white;padding: 14px 20px;text-align: center">
-        <b>QUẢN LÝ ĐƠN HÀNG</b>
+<?php
+if ($row_user['Groups'] == 1) {
+    ?>
+<a href="admin">
+    <div style="text-align: center;">
+        <button class="btn btn-danger" style="text-align: center; padding: 8px 100px;margin: 20px 0;"><b>ADMIN PANNEL</b></button>
     </div>
-    <br>
-    <div class="row justify-content-center">
-        <div class="col-6 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>MÃ ĐƠN HÀNG</b></p>
-        </div>
-        <div class="col-6 col-sm-4 text-center">
-            <p style="font-size: 20px"><b>SẢN PHẨM</b></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>NGÀY MUA</b></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>TỔNG TIỀN</b></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>TÌNH TRẠNG</b></p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-10 mx-auto">
-            <hr>
-            <br>
-        </div>
-    </div>
-    <?php
-    $order = GetOrderInfo($_SESSION['ID_User']);
-    while ($row_order = mysqli_fetch_array($order)) {
-        ?>
-    <div class="row">
-        <div class="col-6 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo $row_order['ID_Donhang']; ?></p>
-        </div>
-        <div class="col-6 col-sm-4 text-center">
-            <p style="font-size: 20px">
-                <?php
-                $listOrder = GetOrderDetail($row_order['ID_Donhang']);
-                while ($row_listOrder = mysqli_fetch_array($listOrder)) {
-                    echo $row_listOrder['Tensach'] . "<br>";
-                }
-
-                ?>
-            </p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo $row_order['Thoigian']; ?></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo number_format($row_order['Tongtien']); ?> đ</p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo $row_order['Tinhtrang']; ?></p>
-        </div>
-    </div>
-    <?php
-
-}
-?>
-
-    <?php
-    if ($row_user['Groups'] == 1) {
-        ?>
-    <p><a href="admin"><button class="confirmbtn"><i class="fas fa-cog" style="margin-right: 10px"></i>ADMIN PANNEL</button>
-        </a>
-    </p>
-    <?php
+</a>
+<?php
 
 }
 ?>

@@ -8,52 +8,21 @@ body {
     position: relative;
 }
 
-.navbar .navbar-nav {
-    margin: 0 auto;
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    background-color: #dc3545;
 }
 
-.navbar .nav-item a {
-    color: #FFF;
+.dropdown-menu {
+    border: none !important;
+    /* etc... */
 }
 
-.navbar .dropdown-menu {
-    background-color: rgba(213, 61, 37, 1);
-    top: 97%;
-}
-
-.nav>li.dropdown.show {
-    position: static;
-}
-
-.nav>li.dropdown.show .dropdown-menu {
-    /* display: flex;*/
-    /*  flex-wrap: wrap;*/
-    border-radius: 0px;
-    width: 72vw !important;
-    /*text-align: center;*/
-    left: 0;
-    right: 0;
-}
-
-.dropdown-menu>a {
-    /* height: 50px; */
-    line-height: 50px;
-    vertical-align: middle;
-    display: inline;
-}
-
-.navbar-nav .nav-link {
-    padding-right: 0;
-    padding-left: 1.8rem;
-}
-
-.dropdown-item {
-    padding-left: 1.8rem;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.15);
-}
+i,b {display:inline;}
+  
+  .btn:active, .btn:focus{
+    box-shadow: none !important;
+  }
 
 .slidescss {
     background-size: 1920px 1080px;
@@ -102,7 +71,7 @@ div a:hover, a:active {
 
 /* Full-width input fields */
 
-input[type=text], input[type=password], input[type=number], input[type=date], input[type=email] {
+input[type=text], input[type=password], input[type=number], input[type=date], input[type=email], input[type=search] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -142,14 +111,6 @@ input[type=text], input[type=password], input[type=number], input[type=date], in
 
 button:hover {
     opacity: 0.8;
-}
-
-.logoutbtn {
-    width: auto;
-    border: none;
-    cursor: pointer;
-    background-color: white;
-    margin-left: 10px;
 }
 
 #header {
