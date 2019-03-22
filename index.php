@@ -174,10 +174,14 @@ if (isset($_POST["btnCancel"])) {
             }
         case "aboutus":
             require "pages/aboutus.php";
-            break;
+            break; 
         case "order":
-            require "pages/order.php";
+        {
+            if (!isset($_SESSION['ID_User'])) {
+                require "blocks/formLogin.php";
+            } else require "pages/order.php";
             break;
+        }
         default:
             require "pages/homepage.php";
     }
