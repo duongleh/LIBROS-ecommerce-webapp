@@ -25,7 +25,7 @@
                         <b>BOOKS</b>
                     </a>
 
-                    <div class="dropdown-menu" style="width:600px" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" style="width:580px" aria-labelledby="navbarDropdownMenuLink">
                         <div class="row">
                             <div class="col-sm">
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=THCS&page=1">Tin học cơ sở</a>
@@ -98,7 +98,7 @@
                         <div class="dropdown">
                             <button type="button" class="btn btn-default dropdown-toggle d-flex align-items-center" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle" style="font-size:30px;color:#dc3545;margin-right:5px"></i>
-                                <b><?php echo mb_substr($_SESSION['Hoten'],0,13); ?></b>
+                                <b><?php echo mb_substr($_SESSION['Hoten'], 0, 13); ?></b>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="index.php?p=order">Quản lý đơn hàng</a>
