@@ -1,18 +1,8 @@
-<br>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-8 ml-auto" style="margin-right: 90px">
-            <hr>
-        </div>
-    </div>
-</div>
-
 <?php
 $tongsach = Count_sachTL($IDTL);
 $row_tongsach = mysqli_fetch_array($tongsach);
 ?>
 
-<br>
 <div class="container-fluid">
     <div class="row" style="margin-left: 20px;margin-right: 20px">
         <div class="col-12 col-sm-3">

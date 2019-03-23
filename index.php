@@ -124,9 +124,13 @@ if (isset($_POST["btnCancel"])) {
 <body>
 
     <?php
-    require "blocks/header.php"; ?>
+    require "blocks/header.php";
 
-    <?php
+    $arr = array("danhmucsach", "product", "login", "signup", "timkiem", "giohang", "checkout", "profile", "aboutus", "order");
+    foreach ($arr as &$value) {
+        if ($p == $value) require "blocks/hr.php";
+    }
+
     switch ($p) {
         case "danhmucsach":
             require "pages/danhmucsach.php";
@@ -137,7 +141,7 @@ if (isset($_POST["btnCancel"])) {
         case "login":
             {
                 if (!isset($_SESSION['ID_User'])) {
-                    require "blocks/formLogin.php";
+                    require "pages/login.php";
                 } else {
                     require "pages/homepage.php";
                 }
@@ -149,7 +153,7 @@ if (isset($_POST["btnCancel"])) {
                     if (isset($_POST["btnSignup"]) && ($register == true)) {
                         require "blocks/signupsuccess.php";
                     } else {
-                        require "blocks/signup.php";
+                        require "pages/signup.php";
                     }
                 } else {
                     require "pages/homepage.php";
@@ -168,25 +172,26 @@ if (isset($_POST["btnCancel"])) {
         case "profile":
             {
                 if (!isset($_SESSION['ID_User'])) {
-                    require "blocks/formLogin.php";
+                    require "pages/login.php";
                 } else require "pages/profile.php";
                 break;
             }
         case "aboutus":
             require "pages/aboutus.php";
-            break; 
-        case "order":
-        {
-            if (!isset($_SESSION['ID_User'])) {
-                require "blocks/formLogin.php";
-            } else require "pages/order.php";
             break;
-        }
+        case "order":
+            {
+                if (!isset($_SESSION['ID_User'])) {
+                    require "pages/login.php";
+                } else require "pages/order.php";
+                break;
+            }
         default:
             require "pages/homepage.php";
     }
+
+    require "blocks/footer.php";
     ?>
-    <?php require "blocks/footer.php"; ?>
 
 </body>
 </html> 

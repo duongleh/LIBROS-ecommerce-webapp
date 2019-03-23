@@ -1,11 +1,6 @@
-<!-- hr -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 mx-auto">
-            <hr>
-        </div>
-    </div>
-</div>
+<?php
+require "hr.php";
+?>
 <br>
 <!-- Info Bar -->
 <div class="d-flex" style="padding: 10px;border-top: 1px solid #f1f2f4;border-bottom: 1px solid #f1f2f4;">

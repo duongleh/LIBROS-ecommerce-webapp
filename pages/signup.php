@@ -1,13 +1,3 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 mx-auto">
-            <hr>
-        </div>
-    </div>
-</div>
-<br>
-
-
 <form name="Signup" method="POST">
     <div class="container" style="background-color:#f1f1f1;padding: 14px 20px;text-align: center">
         <b> ĐĂNG KÝ </b>
