@@ -1,4 +1,5 @@
 admin
 .idea
+.htacess
 lib/quantri.php
 lib/query.txt
