@@ -1,5 +1,5 @@
 admin
 .idea
-.htacess
+.htaccess
 lib/quantri.php
 lib/query.txt
