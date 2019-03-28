@@ -1,15 +1,15 @@
 <div class="container">
-    <nav class="navbar navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-expand-xl navbar-light">
         <!-- navbar-toggler -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars" style="font-size:15px"></i>
         </button>
         <!-- logo -->
         <a class="nav-link" href="index.php">
-            <img class="logo" src="img/logo.png" alt="logo" width="107" height="40">
+            <img class="logo" src="img/logo.png" alt="logo" width="115" height="46">
         </a>
         <!-- button shopping cart for mobile -->
-        <div class="d-block d-sm-none">
+        <div class="d-block d-xl-none">
             <a href="index.php?p=giohang">
                 <button type="button" class="btn btn-outline-danger">
                     <i class="fas fa-shopping-cart"></i>
@@ -27,7 +27,7 @@
 
                     <div class="dropdown-menu" style="width:580px" aria-labelledby="navbarDropdownMenuLink">
                         <div class="row">
-                            <div class="col-sm">
+                            <div class="col-xl">
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=THCS&page=1">Tin học cơ sở</a>
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=Hardware&page=1">Hardware</a>
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=Software&page=1">Software</a>
@@ -40,7 +40,7 @@
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=LTUD&page=1">Lập trình ứng dụng</a>
                             </div>
 
-                            <div class="col-sm">
+                            <div class="col-xl">
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=CSDL&page=1">Cơ sở dữ liệu</a>
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=QTHT&page=1">Quản trị hệ thống</a>
                                 <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=W&page=1">Web</a>
@@ -63,10 +63,10 @@
                 <form class="form-inline d-flex flex-nowrap" name="Search" method="GET">
                     <input type="hidden" name="p" value="timkiem" required>
                     <div class="form-group">
-                        <input class="form-control py-0 border-0 d-none d-sm-block" placeholder="Nhập tên sách..." name="search">
+                        <input class="form-control py-0 border-0 d-none d-xl-block" placeholder="Nhập tên sách..." name="search">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-outline-danger border-0 d-none d-sm-block" type="submit">
+                        <button class="btn btn-outline-danger border-0 d-none d-xl-block" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -76,10 +76,10 @@
                 <form class="form-inline d-flex flex-nowrap" name="Search" method="GET">
                     <input type="hidden" name="p" value="timkiem" required>
                     <div class="form-group">
-                        <input class="form-control py-0 border-danger d-block d-sm-none" placeholder="Nhập tên sách..." name="search">
+                        <input class="form-control py-0 border-danger d-block d-xl-none" placeholder="Nhập tên sách..." name="search">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-outline-danger border-0 d-block d-sm-none" type="submit">
+                        <button class="btn btn-outline-danger border-0 d-block d-xl-none" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -94,7 +94,7 @@
                 <!-- profile block if account loged in -->
                 <li class="nav-item d-flex align-items-center active">
                     <!-- profile icon on web -->
-                    <div class="d-none d-sm-block">
+                    <div class="d-none d-xl-block">
                         <div class="dropdown">
                             <button type="button" class="btn btn-default dropdown-toggle d-flex align-items-center" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle" style="font-size:30px;color:#dc3545;margin-right:5px"></i>
@@ -115,7 +115,7 @@
                     </div>
 
                     <!-- profile icon on mobile -->
-                    <div class="d-block d-sm-none ">
+                    <div class="d-block d-xl-none ">
                         <div class="dropdown-divider" style="margin-top:0px"></div>
                         <i class="fas fa-user-circle" style="color:#dc3545;margin-top:5px"></i>
                         <b><?php echo $_SESSION['Hoten']; ?></b>
@@ -136,8 +136,8 @@
 
                 <!-- profile block if account not log in -->
                 <li class="nav-item d-flex align-items-center active">
-                    <i class="fas fa-user-circle d-none d-sm-block" style="font-size:30px;color:#dc3545"></i>
-                    <i class="fas fa-user-circle d-block d-sm-none" style="font-size:25px;color:#dc3545;margin-right:10px"></i>
+                    <i class="fas fa-user-circle d-none d-xl-block" style="font-size:30px;color:#dc3545"></i>
+                    <i class="fas fa-user-circle d-block d-xl-none" style="font-size:25px;color:#dc3545;margin-right:10px"></i>
                     <a class="nav-link" href="index.php?p=login"><b>ĐĂNG NHẬP</b></a>
                 </li>
                 <?php
@@ -147,7 +147,7 @@
                 </li>
                 <li class="nav-item d-flex align-items-center active">
                     <a href="index.php?p=giohang">
-                        <button type="button" class="btn btn-danger d-none d-sm-block">
+                        <button type="button" class="btn btn-danger d-none d-xl-block">
                             <i class="fas fa-shopping-cart" style="color:white"></i>
                             <b style="color:white">GIỎ HÀNG</b>
                         </button>

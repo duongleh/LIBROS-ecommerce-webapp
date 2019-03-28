@@ -133,3 +133,8 @@ button:hover {
 .pagination li a:hover {
     color: black;
 }
+
+.pagination li a:focus,.pagination li a:active {
+    outline: none !important;
+    box-shadow: none;
+ }

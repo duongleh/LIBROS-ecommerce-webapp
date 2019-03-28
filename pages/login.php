@@ -1,3 +1,4 @@
+<?php require "blocks/hr.php"; ?>
 <form name="Login" method="POST">
     <div class="container">
         <div class="container" style="background-color:#f1f1f1;padding: 14px 20px;text-align: center">

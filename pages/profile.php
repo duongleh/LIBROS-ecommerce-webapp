@@ -21,9 +21,9 @@ if (isset($_POST["btnUpdate"])) {
     $con = myConnect();
     $user_info = mysqli_query($con, $qr);
     if ($user_info) {
-            $_SESSION['Hoten'] = $Hoten;
-            $_SESSION['Diachi'] = $Diachi;
-        }
+        $_SESSION['Hoten'] = $Hoten;
+        $_SESSION['Diachi'] = $Diachi;
+    }
 }
 $user = check_username($_SESSION['Username']);
 $row_user = mysqli_fetch_array($user);
@@ -37,14 +37,14 @@ $row_user = mysqli_fetch_array($user);
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-sm-4 text-center">
+        <div class="col-12 col-md-4 text-center">
             <img src="img/img_avatar.png" width="280" height="auto" alt="book_preview" />
             <br>
             <br>
         </div>
 
 
-        <div class="col-12 col-sm-8 text-center">
+        <div class="col-12 col-md-8 text-center">
             <form name="editInfo" method="POST">
                 <div class="form-group row">
                     <label for="Hoten" class="col-4 col-form-label" style="text-align: end; padding: 12px 20px;margin: 8px 0;">
@@ -98,7 +98,7 @@ $row_user = mysqli_fetch_array($user);
                     </div>
                 </fieldset>
                 <div class="form-group row">
-                    <div class="col-12 col-sm-6" style="text-align: center;">
+                    <div class="col-12 col-md-6" style="text-align: center;">
                         <button type="submit" name="btnUpdate" class="btn btn-success" style="text-align: center; padding: 8px 100px;margin: 20px 0;"><b>CẬP NHẬT</b></button>
                     </div>
                 </div>
@@ -107,10 +107,7 @@ $row_user = mysqli_fetch_array($user);
     </div>
 </div>
 
-<div class="container">
-    <hr>
-    <br>
-</div>
+<?php require "blocks/hr.php"; ?>
 
 <?php
 if ($row_user['Groups'] == 1) {
@@ -124,4 +121,5 @@ if ($row_user['Groups'] == 1) {
 
 }
 ?>
-</div> 
+</div>
+<br> 

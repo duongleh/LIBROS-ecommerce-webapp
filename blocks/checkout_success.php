@@ -42,11 +42,11 @@ if (!$result2) {
 if ($result == true && $result2 == true) {
     ?>
 <div class="container" style="text-align: center">
-    <i class="fas fa-check-circle" style="color: green;font-size: 170px"></i>
+    <i class="fas fa-check-circle" style="color: yellowgreen;font-size: 170px"></i>
 </div>
 <br>
-<div class="container" style="background-color:green;padding: 7px 105px;text-align: center;color:white">
-    Đặt hàng <b>THÀNH CÔNG</b>. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi !
+<div class="container" style="background-color:yellowgreen;padding: 14px 20px;text-align: center;color:white">
+    <b>Đặt hàng THÀNH CÔNG. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi !</b>
 </div>
 <?php
 unset($_SESSION['cart']);

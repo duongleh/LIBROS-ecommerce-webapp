@@ -4,14 +4,14 @@ $row_sp = mysqli_fetch_array($sp);
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-12 col-sm-6 text-center" style="margin-top: 40px;margin-bottom: 40px">
+        <div class="col-12 col-md-6 text-center" style="margin-top: 40px;margin-bottom: 40px">
             <img src="upload/images/<?php if ($row_sp['Hinhanh'] == null) {
                                         echo "book_preview.png";
                                     } else {
                                         echo $row_sp['Hinhanh'];
                                     } ?>" alt="book_preview" width="280" height="auto">
         </div>
-        <div class="col-12 col-sm-6 text-center">
+        <div class="col-12 col-md-6 text-center">
             <br>
             <h1 class="product_title"><?php echo $row_sp['Tensach'] ?></h1>
             <b class="price" style="font-size: 35px"><?php echo number_format($row_sp['Giasach']) ?> đ</b>
@@ -30,23 +30,21 @@ $row_sp = mysqli_fetch_array($sp);
 <?php
 require "blocks/hr.php";
 ?>
-<br>
-<br>
 
 <!-- Lien Quan -->
 <div class="container">
-    <div class="row ">
-        <div class="col-12 text-center">
-            <h4 style="margin-bottom: 40px">SẢN PHẨM LIÊN QUAN</h4>
-        </div>
+    <div style="background-color:#be2a2b;color: white;padding: 14px 20px;text-align: center">
+        <b>SẢN PHẨM LIÊN QUAN</b>
     </div>
+    <br>
+    <br>
 
     <div class="row">
         <?php
         $splq = SPlienquan($row_sp['ID_Theloai'], $row_sp['ID_Sach']);
         while ($row_splq = mysqli_fetch_array($splq)) {
             ?>
-        <div class="col-6 col-xl-3 text-center">
+        <div class="col-6 col-md-3 text-center">
             <a href="index.php?p=product&ID_Sach=<?php echo $row_splq['ID_Sach'] ?>">
                 <img src="upload/images/<?php if ($row_splq['Hinhanh'] == null) {
                                             echo "book_preview.png";

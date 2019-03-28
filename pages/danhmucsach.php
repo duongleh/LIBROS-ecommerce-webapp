@@ -7,12 +7,8 @@ $row_tongsach = mysqli_fetch_array($tongsach);
     <div class="row" style="margin-left: 20px;margin-right: 20px">
         <div class="col-12 col-sm-3">
             <div style="margin-left:10px">
-                <h3> DANH MỤC</h3>
-                <br>
-                <p>
-                    <?php echo $row_tongsach['Theloai']; ?>
-                    (<?php echo $row_tongsach['COUNT(Tensach)']; ?>)
-                </p>
+                <h3><b><?php echo $row_tongsach['Theloai']; ?></b></h3>
+                <h5><?php echo $row_tongsach['COUNT(Tensach)']; ?> kết quả</h5>
             </div>
         </div>
 
@@ -25,7 +21,7 @@ $row_tongsach = mysqli_fetch_array($tongsach);
 
                 while ($row_phantrang = mysqli_fetch_array($phantrang)) {
                     ?>
-                <div class="col-4 col-xl-3 text-center" style="margin-top:30px">
+                <div class="col-4 col-xl-3 col-md-4 col-sm-6 text-center" style="margin-top:30px">
                     <a href="index.php?p=product&ID_Sach=<?php echo $row_phantrang['ID_Sach'] ?>">
                         <img src="upload/images/<?php if ($row_phantrang['Hinhanh'] == null) {
                                                     echo "book_preview.png";
@@ -41,18 +37,11 @@ $row_tongsach = mysqli_fetch_array($tongsach);
             }
             ?>
             </div>
+            <br>
+            <?php require "blocks/hr.php"; ?>
         </div>
     </div>
 </div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-8 ml-auto" style="margin-right: 90px">
-            <hr>
-        </div>
-    </div>
-</div>
-<br>
 
 <!-- Pagination -->
 <nav aria-label="Page navigation example">

@@ -15,26 +15,27 @@ if (isset($_GET["search"])) {
     Không tìm thấy kết quả phù hợp. Xin vui lòng thử lại. !<br>
 </div>
 
-<br>
 <?php
 
 } else {
+    $phanloaisach = PhanLoaiDanhMuc($Tukhoa);
+    $sum_phanloaisach = 0;
+    while ($row_phanloaisach = mysqli_fetch_array($phanloaisach)) {
+        $sum_phanloaisach += $row_phanloaisach['COUNT(sach.ID_Theloai)'];
+    }
     ?>
 
-<br>
 <div class="container-fluid">
     <div class="row" style="margin-left: 20px;margin-right: 20px">
-        <div class="col-12 col-sm-3">
+        <div class="col" style="margin-left:10px">
+            <h4><b>Tìm thấy <?php echo $sum_phanloaisach; ?> kết quả cho '<?php echo $Tukhoa; ?>'</b></h4>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-left: 20px;margin-right: 20px">
+        <div class="col-sm-3 d-none d-sm-block" style="margin-top:30px">
             <div style="margin-left:10px">
-                <?php
-                $phanloaisach = PhanLoaiDanhMuc($Tukhoa);
-                $sum_phanloaisach = 0;
-                while ($row_phanloaisach = mysqli_fetch_array($phanloaisach)) {
-                        $sum_phanloaisach += $row_phanloaisach['COUNT(sach.ID_Theloai)'];
-                    }
-                ?>
-                <h3> DANH MỤC (<?php echo $sum_phanloaisach; ?> kết quả)</h3>
-                <br>
                 <?php
                 mysqli_data_seek($phanloaisach, 0);
                 while ($row_phanloaisach = mysqli_fetch_array($phanloaisach)) {
@@ -55,7 +56,7 @@ if (isset($_GET["search"])) {
                 <?php
                 while ($row_phantrang = mysqli_fetch_array($phantrang)) {
                     ?>
-                <div class="col-4 col-xl-3 text-center" style="margin-top:30px">
+                <div class="col-4 col-xl-3 col-md-4 col-sm-6 text-center" style="margin-top:30px">
                     <a href="index.php?p=product&ID_Sach=<?php echo $row_phantrang['ID_Sach'] ?>">
                         <img src="upload/images/<?php if ($row_phantrang['ID_Sach'] == null) {
                                                     echo "book_preview.png";
@@ -71,18 +72,32 @@ if (isset($_GET["search"])) {
             }
             ?>
             </div>
+            <br>
+            <?php require "blocks/hr.php"; ?>
+        </div>
+
+        <div class="d-block d-sm-none">
+            <div class="col-12">
+                <div style="margin-left:10px">
+                    <?php 
+                    mysqli_data_seek($phanloaisach, 0);
+                    while ($row_phanloaisach = mysqli_fetch_array($phanloaisach)) {
+                        ?>
+                    <p>
+                        <a href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_phanloaisach['ID_Theloai'] ?>">
+                            <?php echo $row_phanloaisach['Theloai']; ?> </a>
+                        (<?php echo $row_phanloaisach['COUNT(sach.ID_Theloai)']; ?>)
+                        <br>
+                    </p>
+                    <?php 
+                } ?>
+                </div>
+            </div>
+            <br>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-8 ml-auto" style="margin-right: 90px">
-            <hr>
-        </div>
-    </div>
-</div>
-<br>
 
 <!-- Pagination -->
 <nav aria-label="Page navigation example">
