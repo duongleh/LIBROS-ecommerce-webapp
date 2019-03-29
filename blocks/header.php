@@ -25,31 +25,32 @@
                         <b>BOOKS</b>
                     </a>
 
-                    <div class="dropdown-menu" style="width:580px" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" style="width:470px" aria-labelledby="navbarDropdownMenuLink">
                         <div class="row">
                             <div class="col-xl">
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=THCS&page=1">Tin học cơ sở</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=Hardware&page=1">Hardware</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=Software&page=1">Software</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=TT&page=1">Thuật Toán</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=TCTH&page=1">Toán cho tin học</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=CTD&page=1">Chương trình dịch</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=LTCS&page=1">Lập trình cơ sở</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=NNLTC&page=1">Ngôn ngữ lập trình C/C++/C#</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=NNLTJ&page=1">Ngôn ngữ lập trình Java</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=LTUD&page=1">Lập trình ứng dụng</a>
+                                <?php 
+                                $theloai = theLoaiSach();
+                                $i = 0;
+                                while ($row_theloai = mysqli_fetch_array($theloai)) {
+                                    ?>
+                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_theloai['ID_Theloai'] ?>&page=1">
+                                    <?php echo $row_theloai['Theloai'] ?></a>
+                                <?php 
+                                $i++;
+                                if ($i > 10) break;
+                            }
+                            ?>
                             </div>
 
                             <div class="col-xl">
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=CSDL&page=1">Cơ sở dữ liệu</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=QTHT&page=1">Quản trị hệ thống</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=W&page=1">Web</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=M&page=1">Mạng</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=AI&page=1">AI</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=B&page=1">Blockchain</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=BM&page=1">Bảo mật</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=DH&page=1">Đồ họa</a>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=UD&page=1">Ứng dụng</a>
+                            <?php 
+                                while ($row_theloai = mysqli_fetch_array($theloai)) {
+                                    ?>
+                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_theloai['ID_Theloai'] ?>&page=1">
+                                    <?php echo $row_theloai['Theloai'] ?></a>
+                                <?php 
+                            }
+                            ?>
                             </div>
                         </div>
                     </div>
@@ -98,7 +99,7 @@
                         <div class="dropdown">
                             <button type="button" class="btn btn-default dropdown-toggle d-flex align-items-center" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle" style="font-size:30px;color:#dc3545;margin-right:5px"></i>
-                                <b><?php echo mb_substr($_SESSION['Hoten'], 0, 13); ?></b>
+                                <b><?php echo mb_substr($_SESSION['Hoten'], 0, 20); ?></b>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="index.php?p=order">Quản lý đơn hàng</a>
@@ -138,7 +139,7 @@
                 <li class="nav-item d-flex align-items-center active">
                     <i class="fas fa-user-circle d-none d-xl-block" style="font-size:30px;color:#dc3545"></i>
                     <i class="fas fa-user-circle d-block d-xl-none" style="font-size:25px;color:#dc3545;margin-right:10px"></i>
-                    <a class="nav-link" href="index.php?p=login"><b>ĐĂNG NHẬP</b></a>
+                    <a class="nav-link" href="index.php?p=login"><b style="margin-right:10px">ĐĂNG NHẬP</b></a>
                 </li>
                 <?php
 

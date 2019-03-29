@@ -28,7 +28,7 @@ $row_tongsach = mysqli_fetch_array($tongsach);
                                                 } else {
                                                     echo $row_phantrang['Hinhanh'];
                                                 } ?>" alt="book_preview" width="70" height="auto">
-                        <h6 style="margin-top:10px"><?php echo $row_phantrang['Tensach'] ?></h6>
+                        <p style="margin-top:10px"><?php echo $row_phantrang['Tensach'] ?></p>
                     </a>
                     <b><?php echo number_format($row_phantrang['Giasach']) ?> đ</b>
                 </div>

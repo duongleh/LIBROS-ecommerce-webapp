@@ -63,6 +63,16 @@ function SanPhamSach($ID_Sach)
     return $result;
 }
 
+function theLoaiSach()
+{
+    $con = myConnect();
+    $qr = "
+		SELECT * FROM theloai ORDER BY LENGTH(Theloai) ASC;
+	";
+    $result = mysqli_query($con, $qr);
+    return $result;
+}
+
 function Count_sachTL($ID_Theloai)
 {
     $con = myConnect();

@@ -51,7 +51,7 @@ require "blocks/hr.php";
                                         } else {
                                             echo $row_splq['Hinhanh'];
                                         } ?>" alt="book_preview" width="auto" height="110">
-                <h6 style="margin-top:10px"><?php echo $row_splq['Tensach'] ?></h6>
+                <p style="margin-top:10px"><?php echo $row_splq['Tensach'] ?></p>
             </a>
             <b><?php echo number_format($row_splq['Giasach']) ?> đ</b>
         </div>

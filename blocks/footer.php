@@ -1,11 +1,10 @@
-<?php
-require "hr.php";
+<?php require "hr.php";
 ?>
 <br>
 <!-- Info Bar -->
 <div class="d-flex" style="padding: 10px;border-top: 1px solid #f1f2f4;border-bottom: 1px solid #f1f2f4;">
     <div class="mr-auto">
-        <nav class="navbar navbar-expand-sm navbar-light">
+        <nav class="navbar navbar-expand-md navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item active px-lg-2">
                     <a class="nav-link" href="#">&copy; 2019 LIBROS</a>
@@ -32,7 +31,7 @@ require "hr.php";
 </div>
 
 <div class="row" style="margin-top:20px">
-    <div class="col-centered col-md-12" align="center">
+    <div class="col" align="center">
         <h3>Cửa hàng sách LIBROS</h3>
         <small> CS1: HUD3 Linh Đàm, Hoàng Liệt, Hoàng Mai, Hà Nội <br>
             CS2: TT8 Times City, Hai Bà Trưng, Hà Nội <br>

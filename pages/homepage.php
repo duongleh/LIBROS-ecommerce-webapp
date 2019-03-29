@@ -36,7 +36,7 @@ for ($i = 0; $i < $arr_length; $i++) {
                                             } else {
                                                 echo $row_sausachmoi['Hinhanh'];
                                             } ?>" alt="book_preview" width="80" height="auto">
-                    <h6 style="margin-top:10px"><?php echo $row_sausachmoi['Tensach'] ?></h6>
+                    <p style="margin-top:10px"><?php echo $row_sausachmoi['Tensach'] ?></p>
                 </a>
                 <b><?php echo number_format($row_sausachmoi['Giasach']) ?> đ</b>
             </div>
