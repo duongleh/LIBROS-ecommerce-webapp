@@ -3,6 +3,7 @@
         <b>QUẢN LÝ ĐƠN HÀNG</b>
     </div>
     <br>
+    <br>
     <div class="row justify-content-center">
         <div class="col-6 col-sm-2 text-center">
             <p style="font-size: 20px"><b>MÃ ĐƠN HÀNG</b></p>
@@ -21,12 +22,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-10 mx-auto">
-            <hr>
-            <br>
-        </div>
-    </div>
+    <?php require "blocks/hr.php"; ?>
+
     <?php
     $order = GetOrderInfo($_SESSION['ID_User']);
     while ($row_order = mysqli_fetch_array($order)) {

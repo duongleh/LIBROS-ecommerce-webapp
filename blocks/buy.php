@@ -4,13 +4,13 @@ $row_checkSLT = mysqli_fetch_array($checkSLT);
 if ($row_checkSLT['SLTon'] != 0) {
     ?>
 <div class="container" style="margin-top:25px">
-    <button type="button" class="btn btn-success">CÒN HÀNG</button>
+    <div class="btn btn-success">CÒN HÀNG</div>
     <br>
     <form name="Buy" method="POST">
         <div class="container">
             <input type="hidden" name="item" value="<?php echo $row_sp['ID_Sach'] ?>" required>
             <input style="width: 80px" type="number" placeholder="" name="num" min="1" value="1" required>
-            <button type="submit" name="btnBuy" class="btn bg-info text-white"><i class="fas fa-cart-plus" style="margin-right: 10px"></i>
+            <button type="submit" name="btnBuy" class="btn bg-info text-white"><i class="fas fa-cart-plus"></i>
                 Thêm vào giỏ hàng
             </button>
         </div>
@@ -22,7 +22,7 @@ if ($row_checkSLT['SLTon'] != 0) {
 } else if ($row_checkSLT['SLTon'] == 0) {
     ?>
 <div class="container" style="margin-top:25px">
-    <button type="button" class="btn btn-danger">Hết Hàng</button>
+    <div class="btn btn-danger">HẾT HÀNG</div>
     <br>
     <br>
 

@@ -7,7 +7,7 @@
         <nav class="navbar navbar-expand-md navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item active px-lg-2">
-                    <a class="nav-link" href="#">&copy; 2019 LIBROS</a>
+                    <a class="nav-link" href="#">&copy; 2019 DƯƠNG LÊ</a>
                 </li>
                 <li class="nav-item px-lg-2">
                     <a class="nav-link" href="#">Điều khoản sử dụng</a>
