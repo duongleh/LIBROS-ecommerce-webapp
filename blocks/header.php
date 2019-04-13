@@ -107,7 +107,7 @@
                                 <div class="dropdown-divider"></div>
 
                                 <form name="Logout" class="dropdown-item" method="POST">
-                                    <button type="submit" name="btnLogout" class="btn btn-danger">Đăng xuất
+                                    <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
                                     </button>
                                 </form>
 
@@ -124,7 +124,7 @@
                         <a class="nav-link active" href="index.php?p=profile">Tài khoản của tôi</a>
 
                         <form name="Logout" method="POST">
-                            <button type="submit" name="btnLogout" class="btn btn-danger">Đăng xuất
+                            <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
                             </button>
                         </form>
 

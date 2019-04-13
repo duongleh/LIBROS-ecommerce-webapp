@@ -1,13 +1,5 @@
-/* body {
-    font-family: 'Avenir LT Std 55 Roman','Avenir LT Std 85 Heavy','Avenir LT Std 95 Black' !important;
-} */
-
-/* body {
-    font-family: 'Hurme Geometric Sans Light','Hurme Geometric Sans Bold' !important;
-} */
-
 body {
-font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 body, html {
@@ -25,28 +17,12 @@ body, html {
     /* etc... */
 }
 
-i,b {display:inline;}
-  
-  .btn:active, .btn:focus{
+i, b {
+    display: inline;
+}
+
+.btn:active, .btn:focus {
     box-shadow: none !important;
-  }
-
-.slidescss {
-    background-size: 1920px 1080px;
-    width: 100%;
-    height: 650px;
-}
-
-.carousel-item {
-    -webkit-background-attachment: fixed!important;
-    -moz-background-attachment: fixed!important;
-    background-attachment: fixed!important;
-    background-position: center top!important;
-}
-
-.carousel-fade .active.carousel-item-left, .carousel-fade .active.carousel-item-prev, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item.active {
-    -webkit-transform: none;
-    transform: none;
 }
 
 div a {
@@ -141,7 +117,7 @@ button:hover {
     color: black;
 }
 
-.pagination li a:focus,.pagination li a:active {
+.pagination li a:focus, .pagination li a:active {
     outline: none !important;
     box-shadow: none;
- }
+}

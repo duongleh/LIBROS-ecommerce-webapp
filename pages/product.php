@@ -14,11 +14,12 @@ $row_sp = mysqli_fetch_array($sp);
         <div class="col-12 col-md-6 text-center">
             <br>
             <h1 class="product_title"><?php echo $row_sp['Tensach'] ?></h1>
-            <b class="price" style="font-size: 35px"><?php echo number_format($row_sp['Giasach']) ?> đ</b>
+            <b style="font-size: 35px"><?php echo number_format($row_sp['Giasach']) ?> đ</b>
             <?php require "blocks/buy.php" ?>
-            <p class="author" style="font-size: 20px"><b>Tác giả:</b> <?php echo $row_sp['Tacgia'] ?></p>
-            <p class="NXB" style="font-size: 20px"><b>Năm xuất bản:</b> <?php echo $row_sp['NamXB'] ?></p>
-            <p class="Date" style="font-size: 20px"><b>Nhà xuất bản:</b> <?php echo $row_sp['Ten_NXB'] ?></p>
+            <p style="font-size: 20px"><b>Tác giả:</b> <?php echo $row_sp['Tacgia'] ?></p>
+            <p style="font-size: 20px"><b>Số trang:</b> <?php echo $row_sp['Sotrang'] ?></p>
+            <p style="font-size: 20px"><b>Năm xuất bản:</b> <?php echo $row_sp['NamXB'] ?></p>
+            <p style="font-size: 20px"><b>Nhà xuất bản:</b> <?php echo $row_sp['Ten_NXB'] ?></p>
 
         </div>
     </div>

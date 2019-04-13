@@ -118,8 +118,8 @@ if (isset($_POST["btnCancel"])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/layout.css" type="text/css" />
-    <link rel="stylesheet" href="css/fontface.css"  type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800&amp;subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="css/slider.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 </head>
 
 <body>
@@ -139,8 +139,7 @@ if (isset($_POST["btnCancel"])) {
         case "product":
             require "pages/product.php";
             break;
-        case "login":
-            {
+        case "login": {
                 if (!isset($_SESSION['ID_User'])) {
                     require "pages/login.php";
                 } else {
@@ -148,8 +147,7 @@ if (isset($_POST["btnCancel"])) {
                 }
                 break;
             }
-        case "signup":
-            {
+        case "signup": {
                 if (!isset($_SESSION['ID_User'])) {
                     if (isset($_POST["btnSignup"]) && ($register == true)) {
                         require "blocks/signupsuccess.php";
@@ -170,8 +168,7 @@ if (isset($_POST["btnCancel"])) {
         case "checkout":
             require "pages/checkout.php";
             break;
-        case "profile":
-            {
+        case "profile": {
                 if (!isset($_SESSION['ID_User'])) {
                     require "pages/login.php";
                 } else require "pages/profile.php";
@@ -180,8 +177,7 @@ if (isset($_POST["btnCancel"])) {
         case "aboutus":
             require "pages/aboutus.php";
             break;
-        case "order":
-            {
+        case "order": {
                 if (!isset($_SESSION['ID_User'])) {
                     require "pages/login.php";
                 } else require "pages/order.php";
@@ -196,4 +192,4 @@ if (isset($_POST["btnCancel"])) {
 
 </body>
 
-</html> 
+</html>
