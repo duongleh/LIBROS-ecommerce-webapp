@@ -1,54 +1,102 @@
 <?php
 require("blocks/slider.php")
 ?>
-<!-- Item -->
-<?php
-$arr = array("NNLTJ", "TT", "CSDL", "W");
-$arr_length = count($arr);
-for ($i = 0; $i < $arr_length; $i++) {
+
+<h3 id="homepage"><b>SÁCH BÁN CHẠY</b></h3>
+
+<div class="container">
+    <div class="row">
+        <?php
+        $sachBanChay = sachBanChay();
+        while ($row_sachBanChay = mysqli_fetch_array($sachBanChay)) {
+            ?>
+            <div class="col-4 col-xl-2 text-center">
+                <a href="index.php?p=product&ID_Sach=<?php echo $row_sachBanChay['ID_Sach'] ?>">
+                    <img src="upload/images/<?php if ($row_sachBanChay['Hinhanh'] == null) {
+                                                echo "book_preview.png";
+                                            } else {
+                                                echo $row_sachBanChay['Hinhanh'];
+                                            } ?>" alt="book_preview" width="auto" height="150">
+                    <p style="margin-top:10px"><?php echo $row_sachBanChay['Tensach'] ?></p>
+                </a>
+                <b><?php echo number_format($row_sachBanChay['Giasach']) ?> đ</b>
+            </div>
+        <?php
+    }
     ?>
+    </div>
+</div>
 
+<h3 id="homepage"><b>SÁCH MỚI NHẤT</b></h3>
 
-    <div class="container" style="margin-top:60px">
-        <div class="row">
-            <div class="col text-center">
-                <?php
-                $IDTL = $arr[$i];
-                $sachMoiNhat = SachMoiNhat($IDTL);
-                $row_sachMoiNhat = mysqli_fetch_array($sachMoiNhat);
-                ?>
-                <a href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $IDTL ?>&page=1">
-                    <h3><b><?php echo $row_sachMoiNhat['Theloai'] ?> </b></h3>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <?php
+        $IDTL = "NNLTJ";
+        $sachMoiNhat = sachMoiNhat();
+        while ($row_sachMoiNhat = mysqli_fetch_array($sachMoiNhat)) {
+            ?>
+            <div class="swiper-slide">
+                <a href="index.php?p=product&ID_Sach=<?php echo $row_sachMoiNhat['ID_Sach'] ?>">
+                    <img src="upload/images/<?php if ($row_sachMoiNhat['Hinhanh'] == null) {
+                                                echo "book_preview.png";
+                                            } else {
+                                                echo $row_sachMoiNhat['Hinhanh'];
+                                            } ?>" alt="book_preview" width="auto" height="150">
+                    <p style="margin-top:15px"><?php echo $row_sachMoiNhat['Tensach'] ?></p>
+                    <b><?php echo number_format($row_sachMoiNhat['Giasach']) ?> đ</b>
                 </a>
             </div>
-        </div>
-
-        <div class="container" style="margin-top:30px">
-            <div class="row">
-                <?php
-                mysqli_data_seek($sachMoiNhat, 0);
-                while ($row_sausachmoi = mysqli_fetch_array($sachMoiNhat)) {
-                    ?>
-                    <div class="col-4 col-xl-2 text-center">
-                        <a href="index.php?p=product&ID_Sach=<?php echo $row_sausachmoi['ID_Sach'] ?>">
-                            <img src="upload/images/<?php if ($row_sausachmoi['Hinhanh'] == null) {
-                                                        echo "book_preview.png";
-                                                    } else {
-                                                        echo $row_sausachmoi['Hinhanh'];
-                                                    } ?>" alt="book_preview" width="80" height="auto">
-                            <p style="margin-top:10px"><?php echo $row_sausachmoi['Tensach'] ?></p>
-                        </a>
-                        <b><?php echo number_format($row_sausachmoi['Giasach']) ?> đ</b>
-                    </div>
-                <?php
-
-            }
-            ?>
-            </div>
-        </div>
+        <?php
+    }
+    ?>
     </div>
+    <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+    <!-- Add Pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+</div>
 
-<?php
 
-}
-?>
+
+<!-- Swiper JS -->
+<script src="./js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 7,
+        spaceBetween: 10,
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     clickable: true,
+        // },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            }
+        }
+
+    });
+</script>

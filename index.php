@@ -119,6 +119,8 @@ if (isset($_POST["btnCancel"])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/layout.css" type="text/css" />
     <link rel="stylesheet" href="css/slider.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 </head>
 

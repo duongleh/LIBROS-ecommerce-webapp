@@ -1,13 +1,24 @@
 <?php
-
-function SachMoiNhat($ID_TheLoai)
+function sachBanChay()
 {
     $con = myConnect();
     $qr = "
-		SELECT * FROM sach,theloai
-		WHERE sach.ID_Theloai = '$ID_TheLoai' AND an_hien = 1 AND sach.ID_Theloai = theloai.ID_Theloai
-		ORDER BY ID_Sach ASC
+        SELECT * FROM sach,soluong
+        WHERE sach.ID_Sach = soluong.ID_Sach
+        ORDER BY SLBan DESC
 		LIMIT 0,6
+	";
+    $result = mysqli_query($con, $qr);
+    return $result;
+}
+
+function sachMoiNhat()
+{
+    $con = myConnect();
+    $qr = "
+		SELECT * FROM sach
+		ORDER BY ID_Sach DESC
+		LIMIT 0,10
 	";
     $result = mysqli_query($con, $qr);
     return $result;
@@ -181,7 +192,7 @@ function GetOrderDetail($ID_Donhang)
 {
     $con = myConnect();
     $qr = "
-	    SELECT chitietdonhang.Soluong,sach.Tensach FROM chitietdonhang,sach
+	    SELECT Soluong,sach.Tensach FROM chitietdonhang,sach
 		WHERE ID_Donhang = '$ID_Donhang' AND chitietdonhang.ID_Sach = sach.ID_Sach
 	";
     $result = mysqli_query($con, $qr);

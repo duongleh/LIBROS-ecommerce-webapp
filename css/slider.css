@@ -9,28 +9,17 @@
 }
 
 .carousel-caption {
-    position: absolute;
+    top: 35%;
+    /* position: absolute;
     -webkit-transform: translate(0%, -50%);
-    transform: translate(0, -50%);
+    transform: translate(0, -50%); */
 }
-@media only screen and (min-width: 720px) {
-    .carousel-caption h2 {
-        font-weight: 900;
-    }
-    
-    .carousel-caption p {
-        font-size: 25px;
-    }
-  }
 
-  @media only screen and (max-width: 720px) {
-    .carousel-caption h2 {
-        font-weight: 900;
-    }
-    
-    .carousel-caption p {
-        font-size: 25px;
-    }
-  }
+.carousel-caption h2 {
+    font-weight: 900;
+    font-size: 45px;
+}
 
-  }
+.carousel-caption p {
+    font-size: 25px;
+}

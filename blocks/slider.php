@@ -7,38 +7,33 @@
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active" style="background-image: url('./img/slider-1.jpeg')">
-        <div class="carousel-caption d-none d-xl-block" style="top:50%">
-          <h2 class="display-4">Xin chào !</h2>
-          <p class="lead">Chào mừng đến với kho sách lập trình hàng đầu Việt Nam</p>
-        </div>
-
-        <div class="carousel-caption d-block d-xl-none" style="top:50%">
-        <h2 class="display-4">Xin chào !</h2>
+        <div class="carousel-caption">
+          <h2>Xin chào !</h2>
           <p class="lead">Chào mừng đến với kho sách lập trình hàng đầu Việt Nam</p>
         </div>
       </div>
 
       <!-- Slide Two - Set the background image for this slide in the line below -->
       <div class="carousel-item" style="background-image: url('./img/slider-2.jpeg')">
-        <div class="carousel-caption d-none d-xl-block" style="top:55%;right:50%">
-          <h2 class="display-4">Flash Sale 50%</h2>
+        <div class="carousel-caption d-none d-xl-block" style="right:50%">
+          <h2>Sale 50%</h2>
           <p class="lead">Áp dụng đồng loạt với 100++ đầu sách</p>
         </div>
 
-        <div class="carousel-caption d-block d-xl-none" style="top:50%">
-          <h2 class="display-4">Flash Sale 50%</h2>
+        <div class="carousel-caption d-block d-xl-none">
+          <h2>Sale 50%</h2>
           <p class="lead">Áp dụng đồng loạt với 100++ đầu sách</p>
         </div>
       </div>
 
       <!-- Slide Three - Set the background image for this slide in the line below -->
       <div class="carousel-item" style="background-image: url('./img/slider-3.jpeg')">
-        <div class="carousel-caption d-none d-xl-block" style="top:50%;left:50%">
-          <h2 class="display-4">Mua sắm thả ga, không lo nghĩ giá</h2>
+        <div class="carousel-caption d-none d-xl-block" style="left:50%">
+          <h2>Mua sắm thả ga, không lo nghĩ giá</h2>
           <p class="lead">Miễn phí vận chuyển trên toàn quốc</p>
         </div>
 
-        <div class="carousel-caption d-block d-xl-none" style="top:50%">
+        <div class="carousel-caption d-block d-xl-none">
           <h2 class="display-5">Mua sắm thả ga, không lo nghĩ giá</h2>
           <p class="lead">Miễn phí vận chuyển trên toàn quốc</p>
         </div>

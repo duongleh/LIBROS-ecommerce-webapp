@@ -3,56 +3,40 @@
         <b>QUẢN LÝ ĐƠN HÀNG</b>
     </div>
     <br>
-    <br>
-    <div class="row justify-content-center">
-        <div class="col-6 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>MÃ ĐƠN HÀNG</b></p>
-        </div>
-        <div class="col-6 col-sm-4 text-center">
-            <p style="font-size: 20px"><b>SẢN PHẨM</b></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>NGÀY MUA</b></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>TỔNG TIỀN</b></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><b>TÌNH TRẠNG</b></p>
-        </div>
-    </div>
-
-    <?php require "blocks/hr.php"; ?>
-
-    <?php
-    $order = GetOrderInfo($_SESSION['ID_User']);
-    while ($row_order = mysqli_fetch_array($order)) {
-        ?>
-    <div class="row">
-        <div class="col-6 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo $row_order['ID_Donhang']; ?></p>
-        </div>
-        <div class="col-6 col-sm-4 text-center">
-            <p style="font-size: 20px">
+    <div class="table-responsive-xl table-hover">
+        <table class="table text-nowrap ">
+            <thead class="thead-dark table-bordered">
+                <tr>
+                    <th scope="col" style="text-align: center;">MÃ ĐƠN HÀNG</th>
+                    <th scope="col" style="text-align: center;">SẢN PHẨM</th>
+                    <th scope="col" style="text-align: center;">NGÀY MUA</th>
+                    <th scope="col" style="text-align: center;">TỔNG TIỀN</th>
+                    <th scope="col" style="text-align: center;">TÌNH TRẠNG</th>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
-                $listOrder = GetOrderDetail($row_order['ID_Donhang']);
-                while ($row_listOrder = mysqli_fetch_array($listOrder)) {
-                    echo $row_listOrder['Tensach'] . "<br>";
-                }
-                ?>
-            </p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo $row_order['Thoigian']; ?></p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo number_format($row_order['Tongtien']); ?> đ</p>
-        </div>
-        <div class="col-4 col-sm-2 text-center">
-            <p style="font-size: 20px"><?php echo $row_order['Tinhtrang']; ?></p>
-        </div>
+                $order = GetOrderInfo($_SESSION['ID_User']);
+                while ($row_order = mysqli_fetch_array($order)) {
+                    ?>
+                    <tr>
+                        <td scope="col" style="text-align: center;"><?php echo $row_order['ID_Donhang']; ?></td>
+                        <td scope="col">
+                            <?php
+                            $listOrder = GetOrderDetail($row_order['ID_Donhang']);
+                            while ($row_listOrder = mysqli_fetch_array($listOrder)) {
+                                echo $row_listOrder['Soluong'] . " <strong>x</strong> "; echo $row_listOrder['Tensach'] . "<br>";
+                            }
+                            ?>
+                        </td>
+                        <td scope="col" style="text-align: center;"><?php echo $row_order['Thoigian']; ?></td>
+                        <td scope="col" style="text-align: center;"><?php echo number_format($row_order['Tongtien']); ?> đ</td>
+                        <td scope="col" style="text-align: center;"><?php echo $row_order['Tinhtrang']; ?></td>
+                    </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
-    <?php
-
-}
-?> 
+</div>
