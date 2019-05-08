@@ -1,6 +1,4 @@
-admin
 .idea
 .htaccess
-lib/quantri.php
 lib/query.txt
-css/font-face
+host.txt
