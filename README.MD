@@ -3,7 +3,7 @@
 Welcome to Libros - Website for Online bookstore.
 This project is an assignment of Database course based on instruction by Lecturer Nguyen Hong Phuong at Hanoi University of Science and Technology.
 
-Demo: <http://libros.byethost11.com>
+Demo: <http://libros.network/>
 
 ## Technologies
 
