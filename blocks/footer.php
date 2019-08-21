@@ -7,7 +7,7 @@
         <nav class="navbar navbar-expand-md navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item active px-lg-2">
-                    <a class="nav-link" href="#"><b>&copy; 2019 DƯƠNG LÊ</b></a>
+                    <a class="nav-link" href="#"><b>&copy; 2019 LIBROS</b></a>
                 </li>
                 <li class="nav-item px-lg-2">
                     <a class="nav-link" href="#">Điều khoản sử dụng</a>
@@ -33,9 +33,8 @@
 <div class="row" style="margin-top:20px">
     <div class="col" align="center">
         <h3><b>Cửa hàng sách LIBROS</b></h3>
-        <small> CS1: HUD3 Linh Đàm, Hoàng Liệt, Hoàng Mai, Hà Nội <br>
-            CS2: TT8 Times City, Hai Bà Trưng, Hà Nội <br>
-            Hotline tư vấn: 0854.267.996</small>
+        <small> HUD3 Linh Đàm, Hoàng Liệt, Hoàng Mai, Hà Nội <br>
+            Hotline tư vấn: 0862.414.860</small>
     </div>
 </div>
 <br>
