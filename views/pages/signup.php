@@ -1,23 +1,18 @@
 <div class="container-fluid">
     <div class="row no-gutter">
         <div class="col-md-8 col-lg-7">
-            <form name="Signup" method="POST">
+            <form name="Signup" method="POST" action="controllers/signup.php">
                 <?php
-                if (isset($_POST["btnSignup"]) && ($register == false)) {
-                    $check_username = check_uniqueuser($_POST["uname"]);
+                if (isset($_SESSION["error"])) {
                     ?>
                     <div class="container" style="background-color:red;padding: 14px 20px;text-align: center;color:white">
-                        Đăng ký <b>THẤT BẠI</b>. Xin vui lòng thử lại !<br>
-                        <?php
-                            if (mysqli_num_rows($check_username) == 1) {
-                                echo "<b>Lỗi:</b> Username đã được sử dụng";
-                            }
-                            ?>
+                        <?php echo $_SESSION["error"]; ?>
                     </div>
-                    <br>
                 <?php
-
-                }   ?>
+                    unset($_SESSION["error"]);
+                }
+                ?>
+                <br>
                 <div class="container">
                     <label for="Hoten"><b>Họ tên *</b></label>
                     <input type="text" placeholder="Nhập họ và tên" name="Hoten" required>

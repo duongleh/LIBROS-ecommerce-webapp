@@ -73,8 +73,8 @@
         <div class="container">
             <div class="row">
                 <div class="col" style="text-align: start">
-                    <form name="cancel" method="POST">
-                        <button type="submit" name="btnCancel" class="btn btn-danger"><i class="fas fa-chevron-left" style="margin-right: 10px"></i>Hủy giỏ hàng</button>
+                    <form name="delCart" method="POST" action="controllers/delCart.php">
+                        <button type="submit" name="btnDelCart" class="btn btn-danger"><i class="fas fa-chevron-left" style="margin-right: 10px"></i>Hủy giỏ hàng</button>
                     </form>
                 </div>
                 <div class="col" style="text-align: end">

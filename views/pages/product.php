@@ -15,7 +15,7 @@ $row_sp = mysqli_fetch_array($sp);
             <br>
             <h1 class="product_title"><?php echo $row_sp['Tensach'] ?></h1>
             <b style="font-size: 35px"><?php echo number_format($row_sp['Giasach']) ?> đ</b>
-            <?php require "views/blocks/buy.php" ?>
+            <?php require "views/blocks/addToCart.php" ?>
             <p style="font-size: 20px"><b>Tác giả:</b> <?php echo $row_sp['Tacgia'] ?></p>
             <p style="font-size: 20px"><b>Số trang:</b> <?php echo $row_sp['Sotrang'] ?></p>
             <p style="font-size: 20px"><b>Năm xuất bản:</b> <?php echo $row_sp['NamXB'] ?></p>

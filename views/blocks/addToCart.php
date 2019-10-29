@@ -6,11 +6,11 @@ if ($row_checkSLT['SLTon'] != 0) {
     <div class="container" style="margin-top:25px">
         <div class="btn btn-success">CÒN HÀNG</div>
         <br>
-        <form name="Buy" method="POST">
+        <form name="addToCart" method="POST" action="controllers/addToCart.php">
             <div class="container">
-                <input type="hidden" name="item" value="<?php echo $row_sp['ID_Sach'] ?>" required>
+                <input type="hidden" name="id" value="<?php echo $row_sp['ID_Sach'] ?>" required>
                 <input style="width: 80px" type="number" placeholder="" name="num" min="1" value="1" required>
-                <button type="submit" name="btnBuy" class="btn bg-info text-white"><i class="fas fa-cart-plus"></i>
+                <button type="submit" name="btnAddToCart" class="btn bg-info text-white"><i class="fas fa-cart-plus"></i>
                     Thêm vào giỏ hàng
                 </button>
             </div>

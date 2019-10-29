@@ -106,7 +106,7 @@
                                     <a class="dropdown-item" href="index.php?p=profile">Tài khoản của tôi</a>
                                     <div class="dropdown-divider"></div>
 
-                                    <form name="Logout" class="dropdown-item" method="POST">
+                                    <form name="Logout" class="dropdown-item" method="POST" action="controllers/logout.php">
                                         <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
                                         </button>
                                     </form>
@@ -123,7 +123,7 @@
                             <a class="nav-link active" href="index.php?p=order">Quản lý đơn hàng</a>
                             <a class="nav-link active" href="index.php?p=profile">Tài khoản của tôi</a>
 
-                            <form name="Logout" method="POST">
+                            <form name="Logout" method="POST" action="controllers/logout.php">
                                 <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
                                 </button>
                             </form>
