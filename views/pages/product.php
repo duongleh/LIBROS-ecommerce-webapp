@@ -5,11 +5,7 @@ $row_sp = mysqli_fetch_array($sp);
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6 text-center" style="margin-top: 40px;margin-bottom: 40px">
-            <img src="assets/upload/images/<?php if ($row_sp['Hinhanh'] == null) {
-                                                echo "book_preview.png";
-                                            } else {
-                                                echo $row_sp['Hinhanh'];
-                                            } ?>" alt="book_preview" width="280" height="auto">
+            <img src="assets/upload/images/<?php echo ($row_sp['Hinhanh']) ?  $row_sp['Hinhanh'] : "book_preview.png"; ?>" alt="book" width="280" height="auto">
         </div>
         <div class="col-12 col-md-6 text-center">
             <br>
@@ -47,11 +43,7 @@ require "views/blocks/hr.php";
             ?>
             <div class="col-6 col-md-3 text-center">
                 <a href="index.php?p=product&ID_Sach=<?php echo $row_splq['ID_Sach'] ?>">
-                    <img src="assets/upload/images/<?php if ($row_splq['Hinhanh'] == null) {
-                                                            echo "book_preview.png";
-                                                        } else {
-                                                            echo $row_splq['Hinhanh'];
-                                                        } ?>" alt="book_preview" width="auto" height="110">
+                    <img src="assets/upload/images/<?php echo ($row_splq['Hinhanh']) ? $row_splq['Hinhanh'] : "book_preview.png"; ?>" alt="book" width="auto" height="110">
                     <p style="margin-top:10px"><?php echo $row_splq['Tensach'] ?></p>
                 </a>
                 <b><?php echo number_format($row_splq['Giasach']) ?> đ</b>

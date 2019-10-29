@@ -6,5 +6,5 @@ if (isset($_POST["btnDelCart"])) {
     unset($_SESSION['indexs']);
 }
 
-header("Location: ../index.php?p=giohang");
+header("Location: ../index.php?p=cart");
 exit();

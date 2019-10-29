@@ -17,20 +17,18 @@ if (isset($_POST["btnSignup"])) {
     $pa = $_POST["psw"];
     $pa = md5($pa);
     $gr = 0;
-    $qr = "
-        INSERT INTO users(Hoten,Diachi,SDT,Ngaysinh,Email,Gioitinh,Ngaydangky,Username,Passwords,Groups) 
-        VALUES ('$Hoten','$Diachi',$sdt,$Ngaysinh,'$email','$Gioitinh',$today,'$un','$pa',$gr);
-    ";
+    $qr = "INSERT INTO users(Hoten,Diachi,SDT,Ngaysinh,Email,Gioitinh,Ngaydangky,Username,Passwords,Groups) 
+           VALUES ('$Hoten','$Diachi',$sdt,$Ngaysinh,'$email','$Gioitinh',$today,'$un','$pa',$gr);";
     $con = myConnect();
     $register = mysqli_query($con, $qr);
 
     if (!$register) {
-        $_SESSION["error"] = "Đăng ký <b>thất bại</b>. Xin vui lòng thử lại !";
+        $_SESSION["signup_error"] = "Đăng ký <b>thất bại</b>. Xin vui lòng thử lại !";
         $check_username = check_uniqueuser($_POST["uname"]);
         if (mysqli_num_rows($check_username) == 1) {
-            $_SESSION["error"] = "<b>Lỗi:</b> Username đã được sử dụng";
+            $_SESSION["signup_error"] = "<b>Lỗi:</b> Username đã được sử dụng";
         }
-    }
+    } else $_SESSION["signup_success"] = true;
 
     header("Location: ../index.php?p=signup");
     exit();

@@ -1,16 +1,32 @@
 <?php
-if (isset($_POST["Checkoutbtn"])) {
-    require "views/blocks/checkout_success.php";
-} else {
-    ?>
-
+if (isset($_SESSION['success'])) {
+    if ($_SESSION['success']) {
+        ?>
+        <div class="container" style="text-align: center">
+            <i class="fas fa-check-circle" style="color: yellowgreen;font-size: 170px"></i>
+        </div>
+        <br>
+        <div class="container" style="background-color:yellowgreen;padding: 14px 20px;text-align: center;color:white">
+            <b>Đặt hàng THÀNH CÔNG. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi !</b>
+        </div>
+    <?php
+            unset($_SESSION['success']);
+        } else {
+            ?>
+        <div class="container" style="background-color:red;padding: 7px 105px;text-align: center;color:white">
+            Đặt hàng <b>THẤT BẠI</b>. Xin hãy thử lại !
+        </div>
+    <?php
+        }
+    } else {
+        ?>
     <div class="container">
         <div class="container" style="background-color:#be2a2b;color: white;padding: 14px 20px;text-align: center">
             <b>THANH TOÁN</b>
         </div>
         <br>
         <?php
-            if ($_SESSION['indexs'] == 0) {
+            if (!isset($_SESSION['indexs'])) {
                 ?>
             <div class="container" style="background-color:red;color:white;padding: 14px 20px;text-align: center">
                 Giỏ hàng rỗng. Hãy tiếp tục mua sắm !
@@ -24,6 +40,9 @@ if (isset($_POST["Checkoutbtn"])) {
         <?php
 
             } else {
+                if (!isset($_SESSION["ship"])) {
+                    $_SESSION["ship"] = 0;
+                }
                 ?>
             <div class="container">
                 <div class="row">
@@ -47,82 +66,23 @@ if (isset($_POST["Checkoutbtn"])) {
                             </div>
                         </div>
                         <br>
-                        <?php
-                                if (isset($_POST["Shipbtn"])) {
-                                    if ($_POST['ship'] == 2) {
-                                        $_SESSION['ship'] = 30000;
-                                        ?>
-                                <form name="ship" method="POST">
-                                    <b style="font-size: 20px">CHỌN HÌNH THỨC GIAO HÀNG</b>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ship" id="ship1" value="1">
-                                        <label class="form-check-label" for="ship1">
-                                            Giao hàng tiêu chuẩn: miễn phí
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ship" id="ship2" value="2" checked>
-                                        <label class="form-check-label" for="ship2">
-                                            Giao hàng nhanh: 30,000 đ
-                                        </label>
-                                    </div>
-                                    <button type="submit" name="Shipbtn" class="confirmbtn">CẬP NHẬT</button>
-                                </form>
-                                <div class="row">
-                                    <div class="col-10 mx-auto">
-                                        <hr>
-                                    </div>
-                                </div>
-                                <br>
 
-                            <?php
-
-                                        } else {
-                                            $_SESSION['ship'] = 0;
-                                            ?>
-                                <form name="ship" method="POST">
-                                    <b style="font-size: 20px">CHỌN HÌNH THỨC GIAO HÀNG</b>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ship" id="ship1" value="1" checked>
-                                        <label class="form-check-label" for="ship1">
-                                            Giao hàng tiêu chuẩn: miễn phí
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="ship" id="ship2" value="2">
-                                        <label class="form-check-label" for="ship2">
-                                            Giao hàng nhanh: 30,000 đ
-                                        </label>
-                                    </div>
-                                    <button type="submit" name="Shipbtn" class="confirmbtn">CẬP NHẬT</button>
-                                </form>
-                            <?php
-
-                                        }
-                                    } else {
-                                        $_SESSION['ship'] = 0;
-                                        ?>
-                            <form name="ship" method="POST">
-                                <b style="font-size: 20px">CHỌN HÌNH THỨC GIAO HÀNG</b>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ship" id="ship1" value="1" checked>
-                                    <label class="form-check-label" for="ship1">
-                                        Giao hàng tiêu chuẩn: miễn phí
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ship" id="ship2" value="2">
-                                    <label class="form-check-label" for="ship2">
-                                        Giao hàng nhanh: 30,000 đ
-                                    </label>
-                                </div>
-                                <button type="submit" name="Shipbtn" class="confirmbtn">CẬP NHẬT</button>
-                            </form>
-                        <?php
-
-                                }
-                                ?>
-
+                        <form name="ship" method="POST" action="controllers/shipping.php">
+                            <b style="font-size: 20px">CHỌN HÌNH THỨC GIAO HÀNG</b>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ship" id="ship1" value="1" <?php echo ($_SESSION['ship'] == 0) ? "checked" : "" ?>>
+                                <label class="form-check-label" for="ship1">
+                                    Giao hàng tiêu chuẩn: miễn phí
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ship" id="ship2" value="2" <?php echo ($_SESSION['ship'] != 0) ? "checked" : "" ?>>
+                                <label class="form-check-label" for="ship2">
+                                    Giao hàng nhanh: 30,000 đ
+                                </label>
+                            </div>
+                            <button type="submit" name="shipBtn" class="confirmbtn">CẬP NHẬT</button>
+                        </form>
 
                         <div class="row">
                             <div class="col-10 mx-auto">
@@ -184,7 +144,6 @@ if (isset($_POST["Checkoutbtn"])) {
                                 </div>
                             </div>
                         <?php
-
                                 }
                                 $_SESSION['total'] = $tongtien;
                                 ?>
@@ -197,7 +156,6 @@ if (isset($_POST["Checkoutbtn"])) {
                         <div class="row">
                             <div class="col">
                                 <b>TẠM TÍNH:</b>
-
                             </div>
                             <div class="col">
                                 <b><?php echo number_format($_SESSION['total']); ?> đ</b>
@@ -206,7 +164,6 @@ if (isset($_POST["Checkoutbtn"])) {
                         <div class="row">
                             <div class="col">
                                 <b>PHÍ VẬN CHUYỂN:</b>
-
                             </div>
                             <div class="col">
                                 <b><?php echo number_format($_SESSION['ship']); ?> đ</b>
@@ -228,8 +185,8 @@ if (isset($_POST["Checkoutbtn"])) {
                     </div>
                 </div>
                 <div class="row" style="justify-content: center">
-                    <form name="checkout" method="POST">
-                        <button type="submit" name="Checkoutbtn" class="checkoutbtn"><b>ĐẶT MUA</b></button>
+                    <form name="processOrder" method="POST" action="controllers/processOrder.php">
+                        <button type="submit" name="processBtn" class="checkoutbtn"><b>ĐẶT MUA</b></button>
                     </form>
                 </div>
                 <br>
@@ -239,7 +196,6 @@ if (isset($_POST["Checkoutbtn"])) {
             </div>
     </div>
 <?php
-
     }
 }
 ?>

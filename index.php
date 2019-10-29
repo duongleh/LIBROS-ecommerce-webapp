@@ -37,7 +37,7 @@ require "controllers/function.php";
 
     require "views/blocks/header.php";
 
-    $arr = array("danhmucsach", "product", "signup", "timkiem", "giohang", "checkout", "profile", "aboutus", "order");
+    $arr = array("danhmucsach", "product", "signup", "timkiem", "cart", "checkout", "profile", "aboutus", "order");
     foreach ($arr as &$value) {
         if ($p == $value) require "views/blocks/hr.php";
     }
@@ -72,8 +72,8 @@ require "controllers/function.php";
         case "timkiem":
             require "views/pages/timkiem.php";
             break;
-        case "giohang":
-            require "views/pages/giohang.php";
+        case "cart":
+            require "views/pages/cart.php";
             break;
         case "checkout":
             require "views/pages/checkout.php";

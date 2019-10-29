@@ -10,7 +10,7 @@
         </a>
         <!-- button shopping cart for mobile -->
         <div class="d-block d-xl-none">
-            <a href="index.php?p=giohang">
+            <a href="index.php?p=cart">
                 <button type="button" class="btn btn-outline-danger">
                     <i class="fas fa-shopping-cart"></i>
                 </button>
@@ -147,7 +147,7 @@
 
                 </li>
                 <li class="nav-item d-flex align-items-center active">
-                    <a href="index.php?p=giohang">
+                    <a href="index.php?p=cart">
                         <button type="button" class="btn btn-danger d-none d-xl-block">
                             <i class="fas fa-shopping-cart" style="color:white"></i>
                             <b style="color:white">GIỎ HÀNG</b>

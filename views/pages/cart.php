@@ -34,11 +34,7 @@
                             ?>
                         <tr>
                             <td scope="col" style="text-align: center;">
-                                <img src="assets/upload/images/<?php if ($row_cartItem['Hinhanh'] == null) {
-                                                                            echo "book_preview.png";
-                                                                        } else {
-                                                                            echo $row_cartItem['Hinhanh'];
-                                                                        } ?>" alt="book_preview" width="auto" height="150">
+                                <img src="assets/upload/images/<?php echo ($row_cartItem['Hinhanh']) ? $row_cartItem['Hinhanh'] : "book_preview.png"; ?>" alt="book" width="auto" height="150">
                             </td>
 
                             <td scope="col" style="text-align: center;">
