@@ -1,0 +1,139 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.dropdown-menu {
+  border: none !important;
+  /* etc... */
+}
+
+i,
+b {
+  display: inline;
+}
+
+.btn:active,
+.btn:focus {
+  box-shadow: none !important;
+}
+
+div a {
+  text-decoration: none;
+  color: black;
+}
+
+div a:visited {
+  text-decoration: none;
+}
+
+div a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+div a:focus {
+  text-decoration: none;
+}
+
+div a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.form-control:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3) !important;
+}
+
+/* Full-width input fields */
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="search"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline-color: red;
+}
+
+/* Set a style for login buttons */
+
+.loginbtn {
+  background-color: #be2a2b;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.confirmbtn {
+  background-color: #be2a2b;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  margin: 20px 0;
+}
+
+.checkoutbtn {
+  background-color: goldenrod;
+  color: white;
+  border: none;
+  padding: 7px 105px;
+  margin: 20px 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.pagination li.active a {
+  border: none;
+  background-color: red !important;
+}
+
+.pagination li a {
+  color: black;
+  text-decoration: none;
+}
+
+.pagination li a:hover {
+  color: black;
+}
+
+.pagination li a:focus,
+.pagination li a:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+}

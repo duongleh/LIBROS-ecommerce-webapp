@@ -38,7 +38,7 @@ $row_user = mysqli_fetch_array($user);
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-4 text-center">
-            <img src="img/img_avatar.png" width="280" height="auto" alt="book_preview" />
+            <img src="assets/img/img_avatar.png" width="280" height="auto" alt="avatar_preview" />
             <br>
             <br>
         </div>
@@ -107,19 +107,19 @@ $row_user = mysqli_fetch_array($user);
     </div>
 </div>
 
-<?php require "blocks/hr.php"; ?>
+<?php require "views/blocks/hr.php"; ?>
 
 <?php
 if ($row_user['Groups'] == 1) {
     ?>
-<a href="admin">
-    <div style="text-align: center;">
-        <button class="btn btn-danger" style="text-align: center; padding: 8px 100px;margin: 20px 0;"><b>ADMIN PANNEL</b></button>
-    </div>
-</a>
+    <a href="admin">
+        <div style="text-align: center;">
+            <button class="btn btn-danger" style="text-align: center; padding: 8px 100px;margin: 20px 0;"><b>ADMIN PANNEL</b></button>
+        </div>
+    </a>
 <?php
 
 }
 ?>
 </div>
-<br> 
+<br>

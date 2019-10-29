@@ -23,19 +23,20 @@
                         <td scope="col" style="text-align: center;"><?php echo $row_order['ID_Donhang']; ?></td>
                         <td scope="col">
                             <?php
-                            $listOrder = GetOrderDetail($row_order['ID_Donhang']);
-                            while ($row_listOrder = mysqli_fetch_array($listOrder)) {
-                                echo $row_listOrder['Soluong'] . " <strong>x</strong> "; echo $row_listOrder['Tensach'] . "<br>";
-                            }
-                            ?>
+                                $listOrder = GetOrderDetail($row_order['ID_Donhang']);
+                                while ($row_listOrder = mysqli_fetch_array($listOrder)) {
+                                    echo $row_listOrder['Soluong'] . " <strong>x</strong> ";
+                                    echo $row_listOrder['Tensach'] . "<br>";
+                                }
+                                ?>
                         </td>
                         <td scope="col" style="text-align: center;"><?php echo $row_order['Thoigian']; ?></td>
                         <td scope="col" style="text-align: center;"><?php echo number_format($row_order['Tongtien']); ?> đ</td>
                         <td scope="col" style="text-align: center;"><?php echo $row_order['Tinhtrang']; ?></td>
                     </tr>
                 <?php
-            }
-            ?>
+                }
+                ?>
             </tbody>
         </table>
     </div>

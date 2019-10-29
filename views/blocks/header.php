@@ -6,7 +6,7 @@
         </button>
         <!-- logo -->
         <a class="nav-link" href="index.php">
-            <img class="logo" src="img/logo.png" alt="logo" width="115" height="46">
+            <img class="logo" src="assets/img/logo.png" alt="logo" width="115" height="46">
         </a>
         <!-- button shopping cart for mobile -->
         <div class="d-block d-xl-none">
@@ -28,29 +28,29 @@
                     <div class="dropdown-menu" style="width:470px" aria-labelledby="navbarDropdownMenuLink">
                         <div class="row">
                             <div class="col-xl">
-                                <?php 
+                                <?php
                                 $theloai = theLoaiSach();
                                 $i = 0;
                                 while ($row_theloai = mysqli_fetch_array($theloai)) {
                                     ?>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_theloai['ID_Theloai'] ?>&page=1">
-                                    <?php echo $row_theloai['Theloai'] ?></a>
-                                <?php 
-                                $i++;
-                                if ($i > 10) break;
-                            }
-                            ?>
+                                    <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_theloai['ID_Theloai'] ?>&page=1">
+                                        <?php echo $row_theloai['Theloai'] ?></a>
+                                <?php
+                                    $i++;
+                                    if ($i > 10) break;
+                                }
+                                ?>
                             </div>
 
                             <div class="col-xl">
-                            <?php 
+                                <?php
                                 while ($row_theloai = mysqli_fetch_array($theloai)) {
                                     ?>
-                                <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_theloai['ID_Theloai'] ?>&page=1">
-                                    <?php echo $row_theloai['Theloai'] ?></a>
-                                <?php 
-                            }
-                            ?>
+                                    <a class="dropdown-item" href="index.php?p=danhmucsach&ID_TheLoai=<?php echo $row_theloai['ID_Theloai'] ?>&page=1">
+                                        <?php echo $row_theloai['Theloai'] ?></a>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -92,58 +92,58 @@
                 <?php
                 if (isset($_SESSION['ID_User'])) { ?>
 
-                <!-- profile block if account loged in -->
-                <li class="nav-item d-flex align-items-center active">
-                    <!-- profile icon on web -->
-                    <div class="d-none d-xl-block">
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-default dropdown-toggle d-flex align-items-center" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user-circle" style="font-size:30px;color:#dc3545;margin-right:5px"></i>
-                                <b><?php echo mb_substr($_SESSION['Hoten'], 0, 20); ?></b>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="index.php?p=order">Quản lý đơn hàng</a>
-                                <a class="dropdown-item" href="index.php?p=profile">Tài khoản của tôi</a>
-                                <div class="dropdown-divider"></div>
+                    <!-- profile block if account loged in -->
+                    <li class="nav-item d-flex align-items-center active">
+                        <!-- profile icon on web -->
+                        <div class="d-none d-xl-block">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-default dropdown-toggle d-flex align-items-center" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user-circle" style="font-size:30px;color:#dc3545;margin-right:5px"></i>
+                                    <b><?php echo mb_substr($_SESSION['Hoten'], 0, 20); ?></b>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="index.php?p=order">Quản lý đơn hàng</a>
+                                    <a class="dropdown-item" href="index.php?p=profile">Tài khoản của tôi</a>
+                                    <div class="dropdown-divider"></div>
 
-                                <form name="Logout" class="dropdown-item" method="POST">
-                                    <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
-                                    </button>
-                                </form>
+                                    <form name="Logout" class="dropdown-item" method="POST">
+                                        <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
+                                        </button>
+                                    </form>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- profile icon on mobile -->
-                    <div class="d-block d-xl-none ">
-                        <div class="dropdown-divider" style="margin-top:0px"></div>
-                        <i class="fas fa-user-circle" style="color:#dc3545;margin-top:5px"></i>
-                        <b><?php echo $_SESSION['Hoten']; ?></b>
-                        <a class="nav-link active" href="index.php?p=order">Quản lý đơn hàng</a>
-                        <a class="nav-link active" href="index.php?p=profile">Tài khoản của tôi</a>
+                        <!-- profile icon on mobile -->
+                        <div class="d-block d-xl-none ">
+                            <div class="dropdown-divider" style="margin-top:0px"></div>
+                            <i class="fas fa-user-circle" style="color:#dc3545;margin-top:5px"></i>
+                            <b><?php echo $_SESSION['Hoten']; ?></b>
+                            <a class="nav-link active" href="index.php?p=order">Quản lý đơn hàng</a>
+                            <a class="nav-link active" href="index.php?p=profile">Tài khoản của tôi</a>
 
-                        <form name="Logout" method="POST">
-                            <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
-                            </button>
-                        </form>
+                            <form name="Logout" method="POST">
+                                <button type="submit" name="btnLogout" class="btn btn-danger"><b>Đăng xuất</b>
+                                </button>
+                            </form>
 
-                    </div>
+                        </div>
 
-                </li>
+                    </li>
 
-                <?php 
-            } else { ?>
+                <?php
+                } else { ?>
 
-                <!-- profile block if account not log in -->
-                <li class="nav-item d-flex align-items-center active">
-                    <i class="fas fa-user-circle d-none d-xl-block" style="font-size:30px;color:#dc3545"></i>
-                    <i class="fas fa-user-circle d-block d-xl-none" style="font-size:25px;color:#dc3545;margin-right:10px"></i>
-                    <a class="nav-link" href="index.php?p=login"><b style="margin-right:10px">ĐĂNG NHẬP</b></a>
-                </li>
+                    <!-- profile block if account not log in -->
+                    <li class="nav-item d-flex align-items-center active">
+                        <i class="fas fa-user-circle d-none d-xl-block" style="font-size:30px;color:#dc3545"></i>
+                        <i class="fas fa-user-circle d-block d-xl-none" style="font-size:25px;color:#dc3545;margin-right:10px"></i>
+                        <a class="nav-link" href="index.php?p=login"><b style="margin-right:10px">ĐĂNG NHẬP</b></a>
+                    </li>
                 <?php
 
-            } ?>
+                } ?>
 
                 </li>
                 <li class="nav-item d-flex align-items-center active">
@@ -159,4 +159,4 @@
         </div>
 
     </nav>
-</div> 
+</div>

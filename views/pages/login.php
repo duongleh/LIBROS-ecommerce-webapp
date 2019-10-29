@@ -1,7 +1,7 @@
-<?php require "blocks/hr.php"; ?>
+<?php require "views/blocks/hr.php"; ?>
 <div class="container-fluid">
     <div class="row no-gutter">
-        <div class="d-none d-md-flex col-md-4 col-lg-7 bg-image" style="background-image: url('./img/login.jpeg');"></div>
+        <div class="d-none d-md-flex col-md-4 col-lg-7 bg-image" style="background-image: url('assets/img/login.jpeg');"></div>
         <div class="col-md-8 col-lg-5">
             <form name="Login" method="POST">
                 <div class="container">
@@ -12,17 +12,17 @@
                         ?>
                         <div class="container" style="background-color:red;padding: 14px 20px;text-align: center;color:white">
                             <?php
-                            if (mysqli_num_rows($check_usernames) == 0) {
-                                echo "Username không tồn tại. Xin vui lòng thử lại !";
-                            } else if (mysqli_num_rows($check_usernames) == 1 && mysqli_num_rows($check_passwords) == 0) {
-                                echo "Password không chính xác. Xin vui lòng thử lại !";
-                            }
-                            ?>
+                                if (mysqli_num_rows($check_usernames) == 0) {
+                                    echo "Username không tồn tại. Xin vui lòng thử lại !";
+                                } else if (mysqli_num_rows($check_usernames) == 1 && mysqli_num_rows($check_passwords) == 0) {
+                                    echo "Password không chính xác. Xin vui lòng thử lại !";
+                                }
+                                ?>
                         </div>
                         <br>
                     <?php
 
-                }   ?>
+                    }   ?>
 
                     <label for="uname"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" name="uname" required>

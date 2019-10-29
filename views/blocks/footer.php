@@ -23,10 +23,10 @@
     </div>
 
     <div style="margin-right:20px;margin-top:15px">
-        <a href="https://www.facebook.com/liproscode/"><i class="fab fa-facebook-f px-lg-2" style="font-size:25px"></i></a>
-        <a href="#"><i class="fab fa-instagram px-lg-2" style="font-size:25px"></i></a>
-        <a href="#"><i class="fab fa-youtube px-lg-2" style="font-size:25px"></i></a>
-        <a href="#"><i class="far fa-envelope px-lg-2" style="font-size:25px"></i></a>
+        <a href="https://www.facebook.com/liproscode/" target="_blank"><i class="fab fa-facebook-f px-lg-2" style="font-size:25px"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram px-lg-2" style="font-size:25px"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube px-lg-2" style="font-size:25px"></i></a>
+        <a href="#" target="_blank"><i class="far fa-envelope px-lg-2" style="font-size:25px"></i></a>
     </div>
 </div>
 
@@ -34,7 +34,7 @@
     <div class="col" align="center">
         <h3><b>Cửa hàng sách LIBROS</b></h3>
         <small> HUD3 Linh Đàm, Hoàng Liệt, Hoàng Mai, Hà Nội <br>
-            Hotline tư vấn: 0862.414.860</small>
+            Hotline tư vấn: 0854.267.996</small>
     </div>
 </div>
 <br>

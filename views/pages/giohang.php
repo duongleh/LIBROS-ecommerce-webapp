@@ -11,8 +11,8 @@
         </div>
     <?php
 
-} else if (isset($_SESSION['cart']) && $_SESSION['indexs'] > 0) {
-    ?>
+    } else if (isset($_SESSION['cart']) && $_SESSION['indexs'] > 0) {
+        ?>
         <div class="table-responsive-xl table-hover">
             <table class="table text-nowrap ">
                 <thead class="thead-dark table-bordered">
@@ -26,19 +26,19 @@
                 </thead>
                 <tbody>
                     <?php
-                    $tongtien = 0;
-                    for ($i = 1; $i <= $_SESSION['indexs']; $i++) {
-                        $cartItem = SanPhamSach(($_SESSION['cart'][$i][0]));
-                        $row_cartItem = mysqli_fetch_array($cartItem);
-                        $tongtien += $_SESSION['cart'][$i][2];
-                        ?>
+                        $tongtien = 0;
+                        for ($i = 1; $i <= $_SESSION['indexs']; $i++) {
+                            $cartItem = SanPhamSach(($_SESSION['cart'][$i][0]));
+                            $row_cartItem = mysqli_fetch_array($cartItem);
+                            $tongtien += $_SESSION['cart'][$i][2];
+                            ?>
                         <tr>
                             <td scope="col" style="text-align: center;">
-                                <img src="upload/images/<?php if ($row_cartItem['Hinhanh'] == null) {
-                                                            echo "book_preview.png";
-                                                        } else {
-                                                            echo $row_cartItem['Hinhanh'];
-                                                        } ?>" alt="book_preview" width="auto" height="150">
+                                <img src="assets/upload/images/<?php if ($row_cartItem['Hinhanh'] == null) {
+                                                                            echo "book_preview.png";
+                                                                        } else {
+                                                                            echo $row_cartItem['Hinhanh'];
+                                                                        } ?>" alt="book_preview" width="auto" height="150">
                             </td>
 
                             <td scope="col" style="text-align: center;">
@@ -52,8 +52,8 @@
                             <td scope="col" style="text-align: center;"><?php echo number_format($_SESSION['cart'][$i][2]); ?> đ</td>
                         </tr>
                     <?php
-                }
-                ?>
+                        }
+                        ?>
                 </tbody>
             </table>
         </div>
@@ -87,6 +87,6 @@
 
     <?php
 
-}
-?>
+    }
+    ?>
 </div>

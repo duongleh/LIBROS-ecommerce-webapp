@@ -10,4 +10,3 @@ function myConnect()
     mysqli_query($con, "SET NAMES 'utf8'");
     return $con;
 }
- 

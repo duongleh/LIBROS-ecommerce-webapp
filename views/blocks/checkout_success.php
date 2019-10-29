@@ -41,23 +41,23 @@ if (!$result2) {
 
 if ($result == true && $result2 == true) {
     ?>
-<div class="container" style="text-align: center">
-    <i class="fas fa-check-circle" style="color: yellowgreen;font-size: 170px"></i>
-</div>
-<br>
-<div class="container" style="background-color:yellowgreen;padding: 14px 20px;text-align: center;color:white">
-    <b>Đặt hàng THÀNH CÔNG. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi !</b>
-</div>
+    <div class="container" style="text-align: center">
+        <i class="fas fa-check-circle" style="color: yellowgreen;font-size: 170px"></i>
+    </div>
+    <br>
+    <div class="container" style="background-color:yellowgreen;padding: 14px 20px;text-align: center;color:white">
+        <b>Đặt hàng THÀNH CÔNG. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi !</b>
+    </div>
 <?php
-unset($_SESSION['cart']);
-unset($_SESSION['indexs']);
-unset($_SESSION['ship']);
-unset($_SESSION['total']);
+    unset($_SESSION['cart']);
+    unset($_SESSION['indexs']);
+    unset($_SESSION['ship']);
+    unset($_SESSION['total']);
 } else { ?>
-<div class="container" style="background-color:red;padding: 7px 105px;text-align: center;color:white">
-    Đặt hàng <b>THẤT BẠI</b>. Xin hãy thử lại !
-</div>
+    <div class="container" style="background-color:red;padding: 7px 105px;text-align: center;color:white">
+        Đặt hàng <b>THẤT BẠI</b>. Xin hãy thử lại !
+    </div>
 <?php
 
 }
-?> 
+?>
