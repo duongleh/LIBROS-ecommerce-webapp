@@ -1,4 +1,4 @@
-.idea
-.htaccess
 lib/query.txt
 host.txt
+.*
+*/.*
