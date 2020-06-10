@@ -58,7 +58,7 @@ if (isset($_GET["search"])) {
                                     ?>
                             <div class="col-4 col-xl-3 col-md-4 col-sm-6 text-center" style="margin-top:30px">
                                 <a href="index.php?p=product&ID_Sach=<?php echo $row_phantrang['ID_Sach'] ?>">
-                                    <img src="assets/upload/images/<?php echo ($row_phantrang['Hinhanh']) ? $row_phantrang['Hinhanh'] : "book_preview.png"; ?>" alt="book" width="70" height="auto">
+                                    <img src="assets/upload/<?php echo ($row_phantrang['Hinhanh']) ? $row_phantrang['Hinhanh'] : "book_preview.png"; ?>" alt="book" width="70" height="auto">
                                     <p style="margin-top:10px"><?php echo $row_phantrang['Tensach'] ?></p>
                                 </a>
                                 <b><?php echo number_format($row_phantrang['Giasach']) ?> đ</b>
