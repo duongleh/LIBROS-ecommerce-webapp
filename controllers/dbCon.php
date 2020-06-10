@@ -1,9 +1,9 @@
 <?php
 function myConnect()
 {
-    $db_host        = "34.66.40.244";
+    $db_host        = "libros-db";
     $db_user        = "root";
-    $db_pass        = "";
+    $db_pass        = "123456";
     $db_name        = "libros"; 
 
     $con = mysqli_connect($db_host, $db_user, $db_pass);
